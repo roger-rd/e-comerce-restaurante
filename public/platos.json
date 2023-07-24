@@ -1,0 +1,123 @@
+[
+  {
+    "desc": "Consiste en una masa frita de papa cocida, rellena de carne de vacuno, pollo, queso, cebollas, aceitunas, huevos duros, entre otros ingredientes picados.",
+    "id": "P001",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2016/09/Papas_Rellenas_video_Retoques_01-570x458.jpg",
+    "ingredients": ["Papas", "2 huevos duros", "250 gramos de carne molida", "aceitunas negras","pimienta negra", "oregano"],
+    "name": "PAPAS RELLENAS",
+    "categoria": "plato de fondo",
+    "cantidad":"2 Personas",
+    "price": 5950
+  },
+  {
+    "desc": "Plato se utiliza carne de res cortada en trozos que serán dorados en una sartén junto con sal, pimienta, chiles verdes, rojos y de árbol.",
+    "id": "P002",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2021/08/Chili-con-Carne-Ajustada-Web-570x458.jpg",
+    "ingredients": ["Carne Molida","Pulpa de tomate","Porotos negros","Choclo desgranado"],
+    "name": "CHILI CON CARNE",
+    "categoria": "plato de fondo",
+    "cantidad":"4 Personas",
+    "price": 7250
+  },
+  {
+    "desc": "técnica de cocción de la cocina japonesa en la cual los alimentos son asados al horno en un adobo de salsa dulce.",
+    "id": "P003",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2021/08/Pollo_Teriyaki_Interior_Gourmet.jpg",
+    "ingredients": ["Pechugas de pollo", "Arroz blanco", "Brócoli al vapor"," Salsa Teriyaki"],
+    "name": "POLLO TERIYAKI",
+    "categoria": "plato de fondo",
+    "cantidad":" 2 Personas",
+    "price": 7250
+  },
+  {
+    "desc": "Combinacion de albóndigas caseras con caldo y verduras. Las albóndigas están hechas con una mezcla de carne picada, pan rallado, huevos y especias.",
+    "id": "P004",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2016/09/recetas-gourmet-marzo-2021-internet-7-1-570x458.jpg",
+    "ingredients": ["Carne Molida","Marraqueta","Huevos","Zapallo amarillo","Papas"],
+    "name": "CAZUELA DE ALBÓNDIGAS",
+    "categoria": "plato de fondo",
+    "cantidad":"2 Personas",
+    "price": 7250
+  },
+  {
+    "desc": "Se combinan con una cremosa salsa de azafrán que le da un color dorado y un sabor delicado y aromático. Los ostiones frescos añaden un toque marino y textura suave a esta deliciosa preparación.",
+    "id": "P005",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2012/07/fetuccini-con-salsa-de-azafran-y-ostiones.jpg",
+    "ingredients": ["Pasta a eleccion","ostiones sin concha","Vino blanco","Crema","queso parmesano rallado"],
+    "name": "FETUCCINI CON SALSA DE AZAFRÁN Y OSTIONES",
+    "categoria": "plato de fondo",
+    "cantidad":"2 Personas",
+    "price": 7250
+  },
+  {
+    "desc": " El lomo vetado se sazona con especias y se hornea lentamente, lo que permite que la carne se cocine de manera uniforme y conserve su jugosidad.",
+    "id": "P006",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2012/07/lomo-vetado-con-salsa-de-champinones.jpg",
+    "ingredients": ["Lomo vetado","Pimienta","Salsa de Soya","Aceite de oliva","Vino blanco"],
+    "name": "LOMO VETADO AL HORNO",
+    "categoria": "plato de fondo",
+    "cantidad":"2 Personas",
+    "price": 7250
+  },
+  {
+    "desc": "Es un plato sabroso y aromático que combina trozos de pollo tierno con una salsa de curry llena de especias y sabores exóticos..",
+    "id": "P007",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2016/09/Pollo-al-Curry-ajustada-web-570x458.jpg",
+    "ingredients": ["Pechugas de pollo", "Curry","Almendra sin piel", "Salsa Blanca"],
+    "name": "POLLO AL CURRY",
+    "categoria": "plato de fondo",
+    "cantidad":"2 Personas",
+    "price": 7250
+  },
+    {
+    "desc": "Una deliciosa variante del clásico quiche que se caracteriza por ser apto para vegetarianos y utilizar una masa hecha a base de quinoa en lugar de la tradicional masa de harina de trigo.",
+    "id": "P008",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2021/08/Quiche_Adaptada_Gourmet.jpg",
+    "ingredients": ["Aceite de oliva","Quinoa tricolor","Pimienta Negra Molida","Pimentón rojo","Zapallo italiano", "Huevos","Crema de leche"],
+    "name": "QUICHE VEGETARIANO CON MASA DE QUINOA",
+    "categoria": "plato de fondo",
+    "cantidad":" 2 Personas",
+    "price": 7250
+  },
+    {
+    "desc": " Es un plato clásico de la cocina española y consiste en una mezcla de papas (patatas) y huevos. Se trata de una especie de torta o pastel hecho a base de rodajas finas de papas cocidas en aceite y luego mezcladas con huevos batidos",
+    "id": "P010",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2011/04/tortilla_papas.jpg",
+    "ingredients": ["Papas grandes peladas","Pimentón rojo","Huevos","Merquén","Pimienta Negra"],
+    "name": "TORTILLA DE PAPAS",
+    "categoria": "plato de fondo",
+    "cantidad":" 2 Personas",
+    "price": 7250
+  },
+  {
+    "desc": "Una deliciosa preparación de carne que se cocina en el horno para lograr una cocción uniforme y un sabor jugoso.",
+    "id": "P011",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2018/04/1200x627-1-570x458.jpg",
+    "ingredients": ["Ají de Color", "Punta de Ganso", "Papas con Cáscara", "Pimienta Negra Molida", "Vino Blanco"],
+    "name": "CARNE ASADA AL HORNO",
+    "categoria": "plato de fondo",
+    "cantidad":" 2 Personas",
+    "price": 7250
+  },
+  {
+    "desc": "Una deliciosa preparación en la que se utiliza quinoa para crear una capa crujiente alrededor del pescado. Es una opción saludable y sabrosa que combina la textura crujiente de la quinoa con la jugosidad y el sabor del pescado.",
+    "id": "P012",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2015/04/Pescado-con-Costra-de-Quinoa.jpg",
+    "ingredients": ["Filetes de pescado (salmón, congrio)","Mostaza","Quínoa blanca","Quínoa roja","Queso parmesano"],
+    "name": "PESCADO CON COSTRA DE QUÍNOA",
+    "categoria": "plato de fondo",
+    "cantidad":" 2 Personas",
+    "price": 7250
+  },
+  {
+    "desc": " Una opción deliciosa y saludable para aquellos que prefieren evitar la carne en su alimentación. Este tipo de sándwich se compone de diferentes ingredientes vegetarianos que se colocan entre dos rebanadas de pan",
+    "id": "P013",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2016/09/sandwich-vegetariano.jpg",
+    "ingredients": ["Leche","Huevos", "Sal", "Harina", "Aceite"],
+    "name": "SANDWICH VEGETARIANO",
+    "categoria": "plato de fondo",
+    "cantidad":" 2 Personas",
+    "price": 7250
+  }
+]
+
