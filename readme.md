@@ -3,7 +3,7 @@ creado con vite
 
 ingresa aqui para ver el proyecto
 
-<a href="https://64b2c558ee9bac23e1700446--boisterous-granita-9a333b.netlify.app/">ingresa aca</a>
+<a href="https://64c04831c36ba4061384e3d3--precious-monstera-15b8e3.netlify.app/">ingresa aca</a>
 
 
 
