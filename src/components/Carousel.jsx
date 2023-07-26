@@ -1,3 +1,5 @@
+import "../assets/css/carousel.css";
+
 import icon3 from '../assets/img/diversidad.jpg'
 import icon2 from '../assets/img/MyFood.jpg'
 import icon from '../assets/img/mesa.jpg'
@@ -7,7 +9,7 @@ import icon from '../assets/img/mesa.jpg'
 export default function Carousel() {
     return (
         <>
-            <div id="carouselExampleIndicators" className="carousel slide">
+            <div id="carouselExampleIndicators" className="carousel slide-carousel">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -15,13 +17,13 @@ export default function Carousel() {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={icon} alt="..." width={1500} height={630} />
+                        <img src={icon} alt="..."  />
                     </div>
                     <div className="carousel-item">
-                        <img src={icon2} alt="..." width={1500} height={630} />
+                        <img src={icon2} alt="..."  />
                     </div>
                     <div className="carousel-item">
-                        <img src={icon3} alt="..." width={1500} height={630} />
+                        <img src={icon3} alt="..."  />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -33,10 +35,6 @@ export default function Carousel() {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-
-
-
-
         </>
     )
 }
