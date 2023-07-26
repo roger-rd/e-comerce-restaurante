@@ -17,7 +17,7 @@ export default function RegistroForm() {
 
   const registrarUsuario = async () => {
       try {
-        const urlServer = "http://localhost:3001/api/v1/user";
+        const urlServer = "http://localhost:3000/api/v1/user";
         const endpoint = "/register";
         await axios.post(urlServer + endpoint, usuario)
       navigate("/login");

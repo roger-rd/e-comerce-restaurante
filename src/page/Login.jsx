@@ -21,7 +21,7 @@ export default function RegistroForm() {
   };
 
   const iniciarSesion = async () => {
-    const urlServer = "http://localhost:3001/api/v1/user";
+    const urlServer = "http://localhost:3000/api/v1/user";
     const endpoint = "/login";
     const { correo, password } = usuario;
     try {
