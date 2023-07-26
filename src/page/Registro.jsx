@@ -35,8 +35,8 @@ const validarCamposLlenos = ()=>{
 
   const registrarUsuario = async () => {
       try {
-        const urlServer = "http://localhost:3001/api/v1/user";
-        const endpoint = "/register";
+        const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
+        const endpoint = "/register"
         await axios.post(urlServer + endpoint, usuario)
       navigate("/login");
     } catch (error) {
