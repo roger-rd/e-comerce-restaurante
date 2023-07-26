@@ -3,7 +3,7 @@ creado con vite
 
 ingresa aqui para ver el proyecto
 
-<a href="https://resplandeciente-pavlova-9a2d84.netlify.app">ingresa aca</a> 
+<a href="https://resplendent-pavlova-9a2d84.netlify.app/">ingresa aca</a> 
 
 
 
