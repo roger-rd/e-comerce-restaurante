@@ -42,7 +42,7 @@ function App() {
           <Route path="/login" element={<Login />} />
 
           {/* Rutas protegidas */}
-          <Route element={<ProtectedRoute canActivate={setUser}/>}>
+          <Route element={<ProtectedRoute canActivate={user}/>}>
           
             <Route path="/car" element={<Car/>} />
             <Route path="/perfil" element={<Perfil/>} />
