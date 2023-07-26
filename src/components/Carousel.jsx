@@ -1,7 +1,7 @@
 import "../assets/css/carousel.css";
 
 import icon3 from '../assets/img/diversidad.jpg'
-import icon2 from '../assets/img/MyFood.jpg'
+import icon2 from '../assets/img/Myfood.jpg'
 import icon from '../assets/img/mesa.jpg'
 
 

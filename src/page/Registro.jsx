@@ -34,19 +34,7 @@ const validarCamposLlenos = ()=>{
 
 
   const registrarUsuario = async () => {
-    if(!validarCamposLlenos ()){
-      toast.error("por favor, completa todos los campos.",{
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: false,
-      });
-      return
-    };
-    
-    try {
+      try {
         const urlServer = "http://localhost:3001/api/v1/user";
         const endpoint = "/register";
         await axios.post(urlServer + endpoint, usuario)
