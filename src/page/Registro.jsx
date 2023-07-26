@@ -39,14 +39,7 @@ const validarCamposLlenos = ()=>{
         const endpoint = "/register"
         await axios.post(urlServer + endpoint, usuario)
         toast.success("Usuario registrado con éxito 😀", { autoClose: 2000 });
-        // toast.success("¡Usuario registrado con éxito!", {
-        //   position: "top-center",
-        //   autoClose: 5000,
-        //   hideProgressBar: true,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: false,
-        // });
+       
 
       navigate("/login");
     } catch (error) {
