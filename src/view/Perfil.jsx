@@ -4,12 +4,11 @@ import { perfilContext } from "../context/PerfilContext";
 
 export default function Perfil() {
   const { setUsuario } = useContext(UserContext);
-  const { usuarios } = useContext(perfilContext); // Corregir la destructuración para obtener 'usuarios'
+  const { usuarios } = useContext(perfilContext);
 
   useEffect(() => {
     const usuarioLocalStorage = localStorage.getItem("usuario");
     if (usuarioLocalStorage) {
-      // Si hay un usuario registrado en el localStorage, actualiza el contexto
       setUsuario(JSON.parse(usuarioLocalStorage));
     }
   }, []);
@@ -24,7 +23,6 @@ export default function Perfil() {
       <div className="container text-center">
         <div className="row">
           <div>
-            
             <div className="perfil">
               {usuarios &&
                 usuarios.map((item) => (
@@ -33,41 +31,36 @@ export default function Perfil() {
                       <div className="card h-100">
                         <div className="card-body">
                           <h2>Datos Personales</h2>
-                          <h5 className="text-muted">Nombre y apellido: <span>{item.nombre}{item.apellido}</span> </h5>
-                          <h5 className="text-muted"> Rut: {item.rut}</h5>
-                          <h5 className="text-muted"> Correo: {item.correo}</h5>
-                          <h5 className="text-muted"> Telefono: {item.telefono}</h5>
-
+                          <h5 className="text-muted">Nombre y apellido: <span>{item.nombre} {item.apellido}</span></h5>
+                          <h5 className="text-muted">Rut: {item.rut}</h5>
+                          <h5 className="text-muted">Correo: {item.correo}</h5>
+                          <h5 className="text-muted">Teléfono: {item.telefono}</h5>
                         </div>
                         <hr />
                         <div className="card-footer">
-                        <h2>direccion de entrega</h2>
-                        <h5 className="text-muted"> Direccion: {item.direccion}{item.numeroDeCalle} </h5>
-                        <h5 className="text-muted"> Comuna: {item.comuna}</h5>
-
-                          
-                          
-
+                          <h2>Dirección de entrega</h2>
+                          <h5 className="text-muted">Dirección: {item.direccion} {item.numeroDeCalle}</h5>
+                          <h5 className="text-muted">Comuna: {item.comuna}</h5>
                         </div>
+
                         <div className="buttonHome">
-                        <button
+                          <button
                             className="btn btn-info"
                             onClick={() => {
-                              navigate(`/Favoritos/${item.id}`);
+                              // Agrega la lógica para la acción de "Editar perfil"
+                              console.log("Editar perfil");
                             }}
                           >
-                            Editar Perfil  👀
+                            Editar Perfil
                           </button>
-                        </div>
-                        <br />
-                        <div className="buttonHome">
                           <button
                             className="btn btn-danger"
                             onClick={() => {
-                              navigate(`/Favoritos/${item.id}`);
+                              // Agrega la lógica para la acción de "Eliminar usuario"
+                              console.log("Eliminar usuario");
                             }}
                           >
-                            Eliminar 👀
+                            Eliminar
                           </button>
                         </div>
                       </div>
@@ -81,5 +74,3 @@ export default function Perfil() {
     </>
   );
 }
-
-
