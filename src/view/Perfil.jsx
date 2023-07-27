@@ -42,7 +42,8 @@ export default function Perfil() {
   const { setUsuario } = useContext(UserContext);
 
   const getUsuarioData = async () => {
-    const urlServer = "https://proyect-backend.onrender.com/api/v1/user/perfil";
+    const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
+    const endpoint = "/perfil/:id_usuario ";
     const token = localStorage.getItem("token");
 
     try {
