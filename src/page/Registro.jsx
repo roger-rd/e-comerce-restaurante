@@ -174,7 +174,7 @@ const validarCamposLlenos = ()=>{
           name="rol"
           className="form-select"
         >
-          <option disabled >
+          <option disabled selected>
             Seleccione un rol
           </option>
           <option value="cliente">Cliente</option>
