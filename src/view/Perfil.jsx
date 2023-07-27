@@ -109,7 +109,7 @@ export default function Perfil() {
                         <div className="card-footer">
                           <h2>Dirección de entrega</h2>
                           <h5 className="text-muted">Dirección: {item.direccion} {item.numero_de_direccion}</h5>
-                          <h5 className="text-muted">Comuna: {item.comuna}</h5>
+                          {/* <h5 className="text-muted">Comuna: {item.comuna}</h5> */}
                         </div>
 
                         <div className="buttonHome">

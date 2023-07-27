@@ -25,6 +25,7 @@ const validarCamposLlenos = ()=>{
       "numero_de_direccion",
       "correo",
       "password",
+      
       "rol",
   ];
   return camposRequeridos.every((campo)=> usuario[campo]?.trim() !== ""); 
@@ -140,7 +141,7 @@ const validarCamposLlenos = ()=>{
           max="9999"
         />
       </div>
-      <div className="form-group mt-1 ">
+      {/* <div className="form-group mt-1 ">
         <label>Comuna</label>
         <input
           value={usuario.comuna}
@@ -152,7 +153,7 @@ const validarCamposLlenos = ()=>{
           minLength="3"
           maxLength="50"
         />
-      </div>
+      </div> */}
       <div className="form-group mt-1 ">
         <label>Email address</label>
         <input
