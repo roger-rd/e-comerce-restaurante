@@ -39,15 +39,15 @@ import { UserContext } from "../context/UserContext";
 import axios from "axios";
 
 export default function Perfil() {
-  const { setUsuario } = useContext(UserContext);
+  const { usuario, setUsuario } = useContext(UserContext);
 
   const getUsuarioData = async () => {
     const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
-    const endpoint = "/perfil/:id_usuario ";
+    const endpoint = "/perfil"; // No es necesario agregar el parámetro :id_usuario aquí
     const token = localStorage.getItem("token");
 
     try {
-      const { data } = await axios.get(urlServer, {
+      const { data } = await axios.get(urlServer + endpoint, {
         headers: { Authorization: "Bearer " + token },
       });
       setUsuario(data);
@@ -61,20 +61,6 @@ export default function Perfil() {
     getUsuarioData();
   }, []);
 
-
-
-
-  useEffect(() => {
-    const usuarioLocalStorage = localStorage.getItem("usuario");
-    if (usuarioLocalStorage) {
-      setUsuario(JSON.parse(usuarioLocalStorage));
-    }
-  }, []);
-
-
-
-
-
   return (
     <>
       <div>
@@ -86,47 +72,46 @@ export default function Perfil() {
         <div className="row">
           <div>
             <div className="perfil">
-             
-                  <div className="row-cols-1 row-cols-md-1 ">
-                    <div className="col">
-                      <div className="card h-100">
-                        <div className="card-body">
-                          <h2>Datos Personales</h2>
-                          <h5 className="text-muted">Nombre y apellido: <span>{usuarios.nombre} {usuarios.apellido}</span></h5>
-                          <h5 className="text-muted">Rut: {usuarios.rut}</h5>
-                          <h5 className="text-muted">Correo: {usuarios.correo}</h5>
-                          <h5 className="text-muted">Teléfono: {usuarios.telefono}</h5>
-                        </div>
-                        <hr />
-                        <div className="card-footer">
-                          <h2>Dirección de entrega</h2>
-                          <h5 className="text-muted">Dirección: {usuarios.direccion} {usuarios.numero_de_direccion}</h5>
-                          {/* <h5 className="text-muted">Comuna: {item.comuna}</h5> */}
-                        </div>
+              <div className="row-cols-1 row-cols-md-1 ">
+                <div className="col">
+                  <div className="card h-100">
+                    <div className="card-body">
+                      <h2>Datos Personales</h2>
+                      <h5 className="text-muted">Nombre y apellido: <span>{usuario.nombre} {usuario.apellido}</span></h5>
+                      <h5 className="text-muted">Rut: {usuario.rut}</h5>
+                      <h5 className="text-muted">Correo: {usuario.correo}</h5>
+                      <h5 className="text-muted">Teléfono: {usuario.telefono}</h5>
+                    </div>
+                    <hr />
+                    <div className="card-footer">
+                      <h2>Dirección de entrega</h2>
+                      <h5 className="text-muted">Dirección: {usuario.direccion} {usuario.numero_de_direccion}</h5>
+                      {/* <h5 className="text-muted">Comuna: {item.comuna}</h5> */}
+                    </div>
 
-                        <div className="buttonHome">
-                          <button
-                            className="btn btn-info"
-                            onClick={() => {
-                              // Agrega la lógica para la acción de "Editar perfil"
-                              console.log("Editar perfil");
-                            }}
-                          >
-                            Editar Perfil
-                          </button>
-                          <button
-                            className="btn btn-danger"
-                            onClick={() => {
-                              // Agrega la lógica para la acción de "Eliminar usuario"
-                              console.log("Eliminar usuario");
-                            }}
-                          >
-                            Eliminar
-                          </button>
-                        </div>
-                      </div>
+                    <div className="buttonHome">
+                      <button
+                        className="btn btn-info"
+                        onClick={() => {
+                          // Agrega la lógica para la acción de "Editar perfil"
+                          console.log("Editar perfil");
+                        }}
+                      >
+                        Editar Perfil
+                      </button>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => {
+                          // Agrega la lógica para la acción de "Eliminar usuario"
+                          console.log("Eliminar usuario");
+                        }}
+                      >
+                        Eliminar
+                      </button>
                     </div>
                   </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
