@@ -34,6 +34,20 @@ const validarCamposLlenos = ()=>{
 
 
   const registrarUsuario = async () => {
+
+    if (!(validarCamposLlenos)) {
+      toast.error("Todos los campos son obligatorios", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+      });
+      return;
+    }
+
+
       try {
         const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
         const endpoint = "/register"
