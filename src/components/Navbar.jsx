@@ -15,18 +15,18 @@ export default function Navbar() {
     return (
         <nav>
         <div className="d-flex ">
-            <div className="p-2 flex-grow-1 navHom">
+            <div className="  navHom">
             <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/" >🍕🍝🍔 My Food</NavLink>
             </div>
        
 
-            <div className="p-2">
+            <div className="d-flex">
                 <div className=" navHom car">
                 <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/menu" >Menu</NavLink>
                 </div>
 
                 {!usuario && (
-                <div className=" p-2 navHom car">
+                <div className="  navHom car">
                     <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/registro" >Registrarse</NavLink>
                     <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/login" >Iniciar Sesión</NavLink>
                 </div>
@@ -34,7 +34,7 @@ export default function Navbar() {
 
                 {/* rutas protegidas */}
                 {usuario ? (
-                <div className="p-2">
+                <div className="d-flex ">
                     <div className="navHom car">
                     <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/car" >🛒{FormatCoin(total)}</NavLink>
                     </div>

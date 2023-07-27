@@ -36,9 +36,16 @@
         height: 700px;
     }
 }
-@media (max-width: 2000px) {
+@media (min-width: 1600px) {
     .carousel-inner img {
         width: 2000px;
+        height: 700px;
+    }
+}
+
+@media (max-width: 2000px) {
+    .carousel-inner img {
+        width: 2600px;
         height: 700px;
     }
 }
