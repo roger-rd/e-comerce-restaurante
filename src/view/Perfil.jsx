@@ -36,36 +36,30 @@
 
 import { useEffect, useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import { perfilContext } from "../context/PerfilContext";
-
 import axios from "axios";
 
 export default function Perfil() {
   const { setUsuario } = useContext(UserContext);
-  const { usuarios } = useContext(perfilContext);
-
-
 
   const getUsuarioData = async () => {
-    const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
-    const endpoint = "/perfil";
+    const urlServer = "https://proyect-backend.onrender.com/api/v1/user/perfil";
     const token = localStorage.getItem("token");
 
     try {
-      const { data } = await axios.get(urlServer + endpoint, {
+      const { data } = await axios.get(urlServer, {
         headers: { Authorization: "Bearer " + token },
       });
-      setUsuarioGlobal(data);
       setUsuario(data);
-    } catch ({ response: { data: message } }) {
-      alert(message + " 🙁");
-      console.log(message);
+    } catch (error) {
+      alert("Hubo un error al obtener los datos del usuario 🙁");
+      console.log(error);
     }
   };
 
   useEffect(() => {
     getUsuarioData();
-  },[]);
+  }, []);
+
 
 
 
