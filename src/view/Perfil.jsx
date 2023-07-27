@@ -34,16 +34,18 @@
 //   }, []);
 
 
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import axios from "axios";
 
 export default function Perfil() {
   const { usuario, setUsuario } = useContext(UserContext);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const getUsuarioData = async () => {
     const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
-    const endpoint = "/perfil"; // No es necesario agregar el parámetro :id_usuario aquí
+    const endpoint = "/perfil";
     const token = localStorage.getItem("token");
 
     try {
@@ -51,15 +53,24 @@ export default function Perfil() {
         headers: { Authorization: "Bearer " + token },
       });
       setUsuario(data);
+      setLoading(false);
     } catch (error) {
-      alert("Hubo un error al obtener los datos del usuario 🙁");
-      console.log(error);
+      setError("Hubo un error al obtener los datos del usuario 🙁");
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     getUsuarioData();
   }, []);
+
+  if (loading) {
+    return <div>Cargando datos del usuario...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <>
@@ -86,7 +97,6 @@ export default function Perfil() {
                     <div className="card-footer">
                       <h2>Dirección de entrega</h2>
                       <h5 className="text-muted">Dirección: {usuario.direccion} {usuario.numero_de_direccion}</h5>
-                      {/* <h5 className="text-muted">Comuna: {item.comuna}</h5> */}
                     </div>
 
                     <div className="buttonHome">
@@ -119,6 +129,7 @@ export default function Perfil() {
     </>
   );
 }
+
 
 
 //   return (
