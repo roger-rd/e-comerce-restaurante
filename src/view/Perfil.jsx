@@ -35,11 +35,14 @@
 
 
 import { useEffect, useContext, useState } from "react";
-import { UserContext } from "../context/UserContext";
+// import { UserContext } from "../context/UserContext";
 import axios from "axios";
+import { perfilContext } from "../context/PerfilContext";
+
 
 export default function Perfil() {
-  const { usuario, setUsuario } = useContext(UserContext);
+  // const { usuario, setUsuario } = useContext(UserContext);
+  const { usuario, setUsuario } = useContext(perfilContext);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -55,6 +58,12 @@ export default function Perfil() {
       setUsuario(data);
       setLoading(false);
     } catch (error) {
+      if (error.response && error.response.status === 404) {
+        setError("No se encontró el perfil del usuario.");
+      } else {
+        setError("Hubo un error al obtener los datos del usuario 🙁");
+      }
+      setLoading(false);
       setError("Hubo un error al obtener los datos del usuario 🙁");
       setLoading(false);
     }
