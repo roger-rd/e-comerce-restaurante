@@ -15,16 +15,36 @@ export default function RegistroForm() {
     setUsuario({ ...usuario, ...field });
   };
 
+const validarCamposLlenos = ()=>{
+  const camposRequeridos = [
+    "nombre",
+      "apellido",
+      "rut",
+      "telefono",
+      "direccion",
+      "numero_de_direccion",
+      "correo",
+      "password",
+      "rol",
+  ];
+  return camposRequeridos.every((campo)=> usuario[campo]?.trim() !== ""); 
+};
+
+
+
+
   const registrarUsuario = async () => {
       try {
-        const urlServer = "http://localhost:3001/api/v1/user";
-        const endpoint = "/register";
+        const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
+        const endpoint = "/register"
         await axios.post(urlServer + endpoint, usuario)
+        toast.success("Usuario registrado con éxito 😀", { autoClose: 2000 });
+       
+
       navigate("/login");
     } catch (error) {
         if(usuario.correo == usuario.correo){
 
-        
         toast.error("Algo salió mal...", {
           position: "top-center",
           autoClose: 5000,
@@ -51,6 +71,8 @@ export default function RegistroForm() {
           name="nombre"
           className="form-control"
           placeholder="Nombre"
+          minLength="3"
+          maxLength="50"
         />
       </div>
       <div className="form-group mt-1 ">
@@ -62,6 +84,8 @@ export default function RegistroForm() {
           name="apellido"
           className="form-control"
           placeholder="Apellido"
+          minLength="3"
+          maxLength="50"
         />
       </div>
       <div className="form-group mt-1 ">
@@ -73,6 +97,8 @@ export default function RegistroForm() {
           name="rut"
           className="form-control"
           placeholder="Rut"
+          minLength="3"
+          maxLength="10"
         />
       </div>
       <div className="form-group mt-1 ">
@@ -84,6 +110,8 @@ export default function RegistroForm() {
           name="telefono"
           className="form-control"
           placeholder="Numero de Telefono"
+          minLength="3"
+          maxLength="9"
         />
       </div>
       <div className="form-group mt-1 ">
@@ -95,6 +123,8 @@ export default function RegistroForm() {
           name="direccion"
           className="form-control"
           placeholder="Direccion"
+          minLength="3"
+          maxLength="100"
         />
       </div>
       <div className="form-group mt-1 ">
@@ -106,6 +136,8 @@ export default function RegistroForm() {
           name="numero_de_direccion"
           className="form-control"
           placeholder="Numero de direccion"
+          min="1"
+          max="9999"
         />
       </div>
       <div className="form-group mt-1 ">
@@ -117,6 +149,8 @@ export default function RegistroForm() {
           name="correo"
           className="form-control"
           placeholder="Enter email"
+          minLength="3"
+          maxLength="50"
         />
       </div>
       <div className="form-group mt-1 ">
@@ -128,6 +162,8 @@ export default function RegistroForm() {
           name="password"
           className="form-control"
           placeholder="Password"
+          minLength="3"
+          maxLength="100"
         />
       </div>
       <div className="form-group mt-1 ">

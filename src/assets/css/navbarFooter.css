@@ -1,3 +1,7 @@
+
+
+
+
 a{
   font-size: larger;
   text-decoration: none;
@@ -41,6 +45,28 @@ body {
   margin-bottom: 100px; /* Ajusta el valor según el alto del footer */
 }
 
+@media (max-width: 767px) {
+  .navHom {
+    font-size: 14px;
+    /* Otros estilos específicos para pantallas pequeñas */
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navHom {
+    font-size: 16px;
+    /* Otros estilos específicos para pantallas medianas */
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 992px) {
+  .navHom {
+    font-size: 18px;
+    /* Otros estilos específicos para pantallas grandes */
+  }
+}
 
 
 
