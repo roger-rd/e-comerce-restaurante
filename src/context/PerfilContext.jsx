@@ -9,7 +9,7 @@ export default function PerfilProvider({ children }) {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch("/usuarios.json");
+        const response = await fetch("/api/v1/user/usuario/:id_usuario");
         if (!response.ok) throw new Error("NO SE PUEDE DESPLEGAR LA INFORMACIÓN");
         const data = await response.json();
         setUsuarios(data);
@@ -27,7 +27,6 @@ export default function PerfilProvider({ children }) {
     </perfilContext.Provider>
   );
 }
-
 
 
 
