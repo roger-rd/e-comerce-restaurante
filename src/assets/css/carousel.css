@@ -1,4 +1,4 @@
-/* Estilos base para el carousel */
+Estilos base para el carousel
 .carousel-inner img {
     max-width: 100%;
     height: auto;
@@ -9,43 +9,43 @@
 @media (min-width: 576px) {
     .carousel-inner img {
         width: 100%;
-        height: 400px; 
+        height: auto;; 
     }
 }
 
 /* Pantallas con un ancho mayor o igual a 768px */
 @media (min-width: 768px) {
     .carousel-inner img {
-        width: 800px; 
-        height: 500px;
+        width:100%;
+        height: auto;;
     }
 }
 
 /* Pantallas con un ancho mayor o igual a 992px */
 @media (min-width: 992px) {
     .carousel-inner img {
-        width: 1200px; 
-        height: 600px;
+        width: 100%;
+        height: auto;;
     }
 }
 
 /* Pantallas con un ancho mayor o igual a 1200px */
 @media (min-width: 1200px) {
     .carousel-inner img {
-        width: 1600px; 
-        height: 700px;
+        width:100%;
+        height: auto;;
     }
 }
 @media (min-width: 1600px) {
     .carousel-inner img {
-        width: 2000px;
-        height: 700px;
+        width: 100%;
+        height: auto;;
     }
 }
 
 @media (max-width: 2000px) {
     .carousel-inner img {
-        width: 2600px;
-        height: 700px;
+        width:100%;
+        height: auto;;
     }
 }
