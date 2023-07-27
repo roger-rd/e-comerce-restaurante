@@ -141,6 +141,19 @@ const validarCamposLlenos = ()=>{
         />
       </div>
       <div className="form-group mt-1 ">
+        <label>Comuna</label>
+        <input
+          value={usuario.comuna}
+          onChange={handleSetUsuario}
+          type="text"
+          name="comuna"
+          className="form-control"
+          placeholder="comuna"
+          minLength="3"
+          maxLength="50"
+        />
+      </div>
+      <div className="form-group mt-1 ">
         <label>Email address</label>
         <input
           value={usuario.correo}

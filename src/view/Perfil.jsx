@@ -1,17 +1,86 @@
 import { useEffect, useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { perfilContext } from "../context/PerfilContext";
+import axios from "axios";
 
 export default function Perfil() {
   const { setUsuario } = useContext(UserContext);
   const { usuarios } = useContext(perfilContext);
 
+  const getUsuarioData = async (correo) => {
+    const urlServer = "https://proyect-backend.onrender.com/api/v1/user/usuario";
+    try {
+      const { data } = await axios.get(urlServer, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+        params: {
+          correo: correo,
+        },
+      });
+      setUsuario(data);
+    } catch (error) {
+      alert("Hubo un error al obtener los datos del usuario 🙁");
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     const usuarioLocalStorage = localStorage.getItem("usuario");
     if (usuarioLocalStorage) {
-      setUsuario(JSON.parse(usuarioLocalStorage));
+      const usuario = JSON.parse(usuarioLocalStorage);
+      getUsuarioData(usuario.correo);
     }
   }, []);
+
+
+// import { useEffect, useContext } from "react";
+// import { UserContext } from "../context/UserContext";
+// import { perfilContext } from "../context/PerfilContext";
+
+// import axios from "axios";
+
+// export default function Perfil() {
+//   const { setUsuario } = useContext(UserContext);
+//   const { usuarios } = useContext(perfilContext);
+
+
+
+//   const getUsuarioData = async () => {
+//     const urlServer = "https://proyect-backend.onrender.com/api/v1/user/usuario";
+//     const endpoint = ":id_usuario";
+//     const token = localStorage.getItem("token");
+
+//     try {
+//       const { data } = await axios.get(urlServer + endpoint, {
+//         headers: { Authorization: "Bearer " + token },
+//       });
+//       setUsuarioGlobal(data);
+//       setUsuario(data);
+//     } catch ({ response: { data: message } }) {
+//       alert(message + " 🙁");
+//       console.log(message);
+//     }
+//   };
+
+//   useEffect(() => {
+//     getUsuarioData();
+//   },[]);
+
+
+
+  // useEffect(() => {
+  //   const usuarioLocalStorage = localStorage.getItem("usuario");
+  //   if (usuarioLocalStorage) {
+  //     setUsuario(JSON.parse(usuarioLocalStorage));
+  //   }
+  // }, []);
+
+
+
+
+
+
 
   return (
     <>
@@ -39,7 +108,7 @@ export default function Perfil() {
                         <hr />
                         <div className="card-footer">
                           <h2>Dirección de entrega</h2>
-                          <h5 className="text-muted">Dirección: {item.direccion} {item.numeroDeCalle}</h5>
+                          <h5 className="text-muted">Dirección: {item.direccion} {item.numero_de_direccion}</h5>
                           <h5 className="text-muted">Comuna: {item.comuna}</h5>
                         </div>
 
