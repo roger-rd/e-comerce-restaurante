@@ -99,8 +99,9 @@ export default function LoginForm() {
       toast.success("Usuario identificado con éxito 😀", { autoClose: 3000 });
       localStorage.setItem("token", token);
       // Redireccionar o navegar a la página deseada después del login
+      
+      setUsuario()
       navigate("/perfil");
-
     } catch (error) {
       alert("correo o Password incorrecto 🙁, intente nuevamente");
       console.log(error);
@@ -112,7 +113,7 @@ export default function LoginForm() {
       <h1>Iniciar Sesión</h1>
       <hr />
       <div className="form-group mt-1">
-        <label>correo address</label>
+        <label>Correo Electronico</label>
         <input
           value={usuario.correo}
           onChange={handleSetUsuario}
