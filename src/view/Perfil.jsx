@@ -8,11 +8,11 @@ export default function Perfil() {
   const { setUsuario: setUsuarioGlobal } = useContext(Context);
 
   const [usuario, setUsuarioLocal] = useState({});
-  const [loading, setLoading] = useState(true); // Agrega esta línea
+  const [loading, setLoading] = useState(true);
 
   const getUsuarioData = async () => {
     const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
-    const endpoint = "/perfil";
+    const endpoint = "/usuario";
     const token = localStorage.getItem("token");
 
     try {
