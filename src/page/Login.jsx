@@ -38,6 +38,7 @@ export default function RegistroForm() {
   };
 
   return (
+    <form>
     <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
       <h1>Iniciar Sesión</h1>
       <hr />
@@ -68,6 +69,7 @@ export default function RegistroForm() {
         Iniciar Sesión
       </button>
     </div>
+    </form>
   );
 }
 

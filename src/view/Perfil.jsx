@@ -12,6 +12,7 @@ export default function Perfil() {
 
   const getUsuarioData = async () => {
     const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
+    console.log("Token:", token);
     const endpoint = "/perfil";
     const token = localStorage.getItem("token");
 
@@ -19,9 +20,11 @@ export default function Perfil() {
       const { data } = await axios.get(urlServer + endpoint, {
         headers: { Authorization: "Bearer " + token },
       });
+      console.log("Datos del usuario:", data);
       setUsuarioGlobal(data);
       setUsuarioLocal(data);
     } catch (error) {
+      console.log("Error en la solicitud:", error);
       if (error.response && error.response.status === 404) {
         toast.error("No se encontró el perfil del usuario.");
       } else {
