@@ -10,13 +10,13 @@ import PerfilProvider from './context/PerfilContext';
 
 
 import { AuthProvider } from './context/AuthContext';
-
+import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')).render(
   
   <React.StrictMode>
   
-   
+    <BrowserRouter>
       <UserContextProvider>
         <PerfilProvider>
           <OperationsContextProvider>
@@ -26,7 +26,7 @@ createRoot(document.getElementById('root')).render(
           </OperationsContextProvider>
         </PerfilProvider>
       </UserContextProvider>
-    
+    </BrowserRouter>
   
   </React.StrictMode>
 );

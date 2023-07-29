@@ -23,7 +23,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { BrowserRouter } from 'react-router-dom';
+
 import Context from './context/Context';
 import { useState } from "react"
 
@@ -33,10 +33,8 @@ function App() {
   
   return (
     <>
-    <Context.Provider value={{ usuario, setUsuario }} >
-     <BrowserRouter>
-     
-     
+    <Context.Provider value={{ usuario, setUsuario }} >  
+    
       <Navbar />
       <main>
         <Routes>
@@ -65,7 +63,7 @@ function App() {
       
 
 
-      </BrowserRouter>
+    
       </Context.Provider>
 
     </>
