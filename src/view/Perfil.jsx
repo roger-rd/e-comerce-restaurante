@@ -70,7 +70,7 @@
 
 
 import { useContext, useState, useEffect } from "react";
-import Context from "../Context";
+import Context from "../context/Context";
 import axios from "axios";
 
 export default function Home() {
@@ -104,14 +104,6 @@ export default function Home() {
   useEffect(() => {
     getUsuarioData();
   }, []);
-
-  if (loading) {
-    return <div>Cargando datos del usuario...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
 
   return (
     <>

@@ -23,14 +23,20 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
+import { BrowserRouter } from 'react-router-dom';
+import Context from './context/Context';
+import { useState } from "react"
 
 function App() {
   const [user, setUser] = useLocalStorage('user');
-
+  const [usuario, setUsuario] = useState(null)
   
   return (
     <>
+    <Context.Provider value={{ usuario, setUsuario }} >
+     <BrowserRouter>
+     
+     
       <Navbar />
       <main>
         <Routes>
@@ -56,6 +62,12 @@ function App() {
       </main>
       <Footer />
       <ToastContainer/>
+      
+
+
+      </BrowserRouter>
+      </Context.Provider>
+
     </>
   );
 }
