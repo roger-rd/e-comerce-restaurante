@@ -34,17 +34,49 @@
 //   }, []);
 
 
-import { useEffect, useContext, useState } from "react";
-// import { UserContext } from "../context/UserContext";
+// import { useEffect, useContext, useState } from "react";
+// import axios from "axios";
+// import { perfilContext } from "../context/PerfilContext";
+
+
+// export default function Perfil() {
+//   // const { usuario, setUsuario } = useContext(UserContext);
+//   const { usuario, setUsuario } = useContext(perfilContext);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   const getUsuarioData = async () => {
+//     const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
+//     const endpoint = "/perfil";
+//     const token = localStorage.getItem("token");
+
+//     try {
+//       const { data } = await axios.get(urlServer + endpoint, {
+//         headers: { Authorization: "Bearer " + token },
+//       });
+//       setUsuario(data);
+//       setLoading(false);
+//     } catch (error) {
+//       if (error.response && error.response.status === 404) {
+//         setError("No se encontró el perfil del usuario.");
+//       } else {
+//         setError("Hubo un error al obtener los datos del usuario 🙁");
+//       }
+//       setLoading(false);
+//       setError("Hubo un error al obtener los datos del usuario 🙁");
+//       setLoading(false);
+//     }
+//   };
+
+
+import { useContext, useState, useEffect } from "react";
+import Context from "../Context";
 import axios from "axios";
-import { perfilContext } from "../context/PerfilContext";
 
+export default function Home() {
+  const { setUsuario: setUsuarioGlobal } = useContext(Context);
 
-export default function Perfil() {
-  // const { usuario, setUsuario } = useContext(UserContext);
-  const { usuario, setUsuario } = useContext(perfilContext);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [usuario, setUsuarioLocal] = useState({});
 
   const getUsuarioData = async () => {
     const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
@@ -55,17 +87,17 @@ export default function Perfil() {
       const { data } = await axios.get(urlServer + endpoint, {
         headers: { Authorization: "Bearer " + token },
       });
-      setUsuario(data);
-      setLoading(false);
-    } catch (error) {
+      setUsuarioGlobal(data);
+      setUsuarioLocal(data);
+    } catch ({ response: { data: message } }) {
       if (error.response && error.response.status === 404) {
-        setError("No se encontró el perfil del usuario.");
-      } else {
-        setError("Hubo un error al obtener los datos del usuario 🙁");
-      }
-      setLoading(false);
-      setError("Hubo un error al obtener los datos del usuario 🙁");
-      setLoading(false);
+                setError("No se encontró el perfil del usuario.");
+              } else {
+                setError("Hubo un error al obtener los datos del usuario 🙁");
+              }
+              setLoading(false);
+              setError("Hubo un error al obtener los datos del usuario 🙁");
+              setLoading(false);
     }
   };
 
