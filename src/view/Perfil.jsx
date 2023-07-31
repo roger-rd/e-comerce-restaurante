@@ -123,6 +123,7 @@ export default function Perfil() {
 
 
   const getUsuarioData = async () => {
+    //const urlServer = "http://localhost:3001/api/v1/user";
     const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
     const endpoint = "/perfil";
     const token = localStorage.getItem("token");
@@ -137,8 +138,9 @@ export default function Perfil() {
       setUsuarioLocal(data);
     } catch (error) {
       console.log("Error al obtener los datos del usuario:", error);
-      const { status, message } = handleErrors(error.code);
-      return res.status(status).json({ ok: false, result: message });
+      //const { status:500, message } = handleErrors(error.code);
+      toast.error("Error al obtener los datos del usuario");
+      //return res.status(500).json({ ok: false, result: message });
     } finally {
       setLoading(false);
     }

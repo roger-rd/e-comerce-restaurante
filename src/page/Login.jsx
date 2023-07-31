@@ -94,6 +94,7 @@ export default function RegistroForm() {
   };
 
   const iniciarSesion = async () => {
+   // const urlServer = "http://localhost:3001/api/v1/user";
     const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
     const endpoint = "/login";
     const { correo, password } = usuario;
