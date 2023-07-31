@@ -1,28 +1,8 @@
-// import React, { useEffect, useContext } from "react";
-// import { UserContext } from "../context/UserContext";
-
-// export default function Favoritos() {
-//   const { setUsuario } = useContext(UserContext);
-
-//   useEffect(() => {
-//     const usuarioLocalStorage = localStorage.getItem("usuario");
-//     if (usuarioLocalStorage) {
-//       // Si hay un usuario registrado en el localStorage, actualiza el contexto
-//       setUsuario(JSON.parse(usuarioLocalStorage));
-//     }
-//   }, []);
-
-//   return (
-//     <div>
-//       hola es la pagina del favoritos
-//     </div>
-//   );
-// }
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/galeria.css";
 import { UserContext } from "../context/UserContext";
-import Heart from "../components/Heart";
+
 import ButtonAdd from "../components/ButtonAdd"; 
 
 export default function Galeria() {
@@ -34,12 +14,12 @@ export default function Galeria() {
     setPhotos([...photos]);
   }
 
-  // Filtrar las imágenes con favorito=true antes del mapeo
   const favoritePhotos = photos.filter((item) => item.favorito);
 
   return (
-    <div className="galeria">
-      <h3> Agrega tus fotos favoritas aquí 🤩🤩🤩🤩</h3>
+    <div className=" container">
+      <h1 className="text-center"> Agrega tus comidas favoritas aquí 🍔🍰🧁</h1>
+      <div className="galeria">
       {favoritePhotos.map((item) => (
         <div className="row-cols-1 row-cols-md-1" key={item.id}>
           <div className="col">
@@ -77,6 +57,8 @@ export default function Galeria() {
           </div>
         </div>
       ))}
+      </div>
+      
     </div>
   );
 }

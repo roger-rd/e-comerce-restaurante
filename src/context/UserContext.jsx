@@ -5,7 +5,7 @@ export const UserContext = createContext();
 export default function UserContextProvider({ children }) {
   const [usuario, setUsuario] = useState(null);
   const [platos, setPlatos] = useState([]);
-  const [photos, setPhotos] = useState([]);
+  const [favorito, setfavorito] = useState([]);
   const [error, setError] = useState(null);
 
   const fetchPlatosData = async () => {
@@ -13,20 +13,20 @@ export default function UserContextProvider({ children }) {
       const response = await fetch("/platos.json");
       if (!response.ok) throw new Error("NO SE PUEDE DESPLEGAR LA INFORMACIÓN");
       const data = await response.json();
-      const photosData = data.map((plato) => ({ ...plato, favorito: false }));
+      const favoritoData = data.map((plato) => ({ ...plato, favorito: false }));
       setPlatos(data);
-      setPhotos(photosData);
+      setfavorito(favoritoData);
     } catch (error) {
       setError(error);
     }
   };
 
-  const fetchPhotosData = async () => {
+  const fetchfavoritoData = async () => {
     try {
       const response = await fetch("/platosjson");
       if (!response.ok) throw new Error("Error al acceder a la API");
       const data = await response.json();
-      setPhotos(data.img);
+      setfavorito(data.img);
     } catch (error) {
       setError(error);
     }
@@ -34,12 +34,12 @@ export default function UserContextProvider({ children }) {
 
   useEffect(() => {
     fetchPlatosData();
-    fetchPhotosData();
+    fetchfavoritoData();
   }, []);
 
 
     return (
-        <UserContext.Provider value={{usuario,setUsuario, platos, setPlatos, error, setError,photos,setPhotos }}>
+        <UserContext.Provider value={{usuario,setUsuario, platos, setPlatos, error, setError,favorito,setfavorito }}>
             {children}
         </UserContext.Provider>
     )

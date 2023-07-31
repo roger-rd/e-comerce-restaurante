@@ -5,13 +5,42 @@ import ButtonAdd from "../components/ButtonAdd";
 import { useUserContext } from "../context/UserContext";
 
 export default function Menu() {
-  const { platos, photos, setPhotos } = useUserContext();
+  const { platos, favorito, setfavorito, user, cart, setCart } = useUserContext();
   const navigate = useNavigate();
 
   const handleToggleFavorite = (id) => {
-    const index = photos.findIndex((ele) => ele.id === id);
-    photos[index].favorito = !photos[index].favorito;
-    setPhotos([...photos]);
+    if (!user) {
+      alert("Debes iniciar sesión para agregar a favoritos.");
+      return;
+    }
+
+    const index = favorito.findIndex((ele) => ele.id === id);
+    favorito[index].favorito = !favorito[index].favorito;
+    setfavorito([...favorito]);
+  };
+
+  const handleAddToCart = (id) => {
+    if (!user) {
+      alert("Debes iniciar sesión para agregar al carrito.");
+      return;
+    }
+
+    const selectedPlato = platos.find((item) => item.id === id);
+
+    // Verificar si el plato ya está en el carrito
+    const existingPlato = cart.find((item) => item.id === id);
+
+    if (existingPlato) {
+      // Si el plato ya está en el carrito, incrementar la cantidad
+      const updatedCart = cart.map((item) =>
+        item.id === id ? { ...item, cantidad: item.cantidad + 1 } : item
+      );
+      setCart(updatedCart);
+    } else {
+      // Si el plato no está en el carrito, agregarlo con cantidad 1
+      const newPlato = { ...selectedPlato, cantidad: 1 };
+      setCart([...cart, newPlato]);
+    }
   };
 
   return (
@@ -45,12 +74,15 @@ export default function Menu() {
                     >
                       Ver más 👀
                     </button>
-                    <ButtonAdd idPlato={item.id} />
+                    <ButtonAdd
+                      idPlato={item.id}
+                      onClick={() => handleAddToCart(item.id)}
+                    />
                     <button
                       className="btn btn-success"
                       onClick={() => handleToggleFavorite(item.id)}
                     >
-                      {photos.find((photo) => photo.id === item.id)?.favorito
+                      {favorito.find((photo) => photo.id === item.id)?.favorito
                         ? "Quitar de favoritos ❤️"
                         : "Agregar a favoritos 🤍"}
                     </button>
@@ -64,3 +96,4 @@ export default function Menu() {
     </div>
   );
 }
+
