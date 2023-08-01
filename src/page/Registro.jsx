@@ -51,6 +51,10 @@ const validarCamposLlenos = ()=>{
       try {
         const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
         const endpoint = "/register"
+
+        // const urlServer = "http://localhost:3001/api/v1/user";
+        // const endpoint = "/register"
+
         await axios.post(urlServer + endpoint, usuario)
         toast.success("Usuario registrado con éxito 😀", { autoClose: 2000 });
        
@@ -74,6 +78,7 @@ const validarCamposLlenos = ()=>{
 
   return (
     <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
+      <form>
       <h1>Registrar nuevo usuario</h1>
       <hr />
       <div className="form-group mt-1 ">
@@ -196,7 +201,7 @@ const validarCamposLlenos = ()=>{
 
         </select>
         </div>
-      
+        </form>
 
       <button onClick={registrarUsuario} className="btn btn-light mt-3">
         Registrarme
