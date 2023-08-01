@@ -7,9 +7,9 @@ export default function Logout() {
     const navigate = useNavigate();
 
     const logout = () => {
-        setUsuario(null); // Establece el usuario en null o en un valor inicial adecuado
-        localStorage.removeItem("usuario"); // Elimina los datos del usuario almacenados en el localStorage
-        navigate("/"); // Navega a la página de inicio o a la ruta que desees después del logout
+        setUsuario(null);
+        localStorage.removeItem("usuario"); 
+        navigate("/"); 
       };
       return (
         <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
