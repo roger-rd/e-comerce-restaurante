@@ -18,6 +18,8 @@ export default function Perfil() {
 
     // const urlServer = "http://localhost:3001/api/v1/user/";
     // const endpoint = "/perfil";
+
+
     const token = localStorage.getItem("token");
     console.log("Token:", token)
 

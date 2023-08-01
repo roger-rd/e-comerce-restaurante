@@ -6,21 +6,21 @@ import { UserContext } from "../context/UserContext";
 import ButtonAdd from "../components/ButtonAdd"; 
 
 export default function Galeria() {
-  const { photos, setPhotos } = useContext(UserContext);
+  const { favorito, setFavorito } = useContext(UserContext);
 
   function handleClick(id) {
-    const index = photos.findIndex((ele) => ele.id === id);
-    photos[index].favorito = !photos[index].favorito;
-    setPhotos([...photos]);
+    const index = favorito.findIndex((ele) => ele.id === id);
+    favorito[index].favorito = !favorito[index].favorito;
+    setFavorito([...favorito]);
   }
 
-  const favoritePhotos = photos.filter((item) => item.favorito);
+  const favoriteMenu = favorito.filter((item) => item.favorito);
 
   return (
     <div className=" container">
       <h1 className="text-center"> Agrega tus comidas favoritas aquí 🍔🍰🧁</h1>
       <div className="galeria">
-      {favoritePhotos.map((item) => (
+      {favoriteMenu.map((item) => (
         <div className="row-cols-1 row-cols-md-1" key={item.id}>
           <div className="col">
             <div className="card h-100">

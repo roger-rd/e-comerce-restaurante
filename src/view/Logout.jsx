@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import Context from "../context/Context";
 import { useNavigate } from "react-router-dom";
 
 export default function Logout() {
-    const { setUsuario } = useContext(AuthContext);
+   const { setUsuario } = useContext(Context);
     const navigate = useNavigate();
 
     const logout = () => {

@@ -3,14 +3,19 @@ import "../assets/css/navbarFooter.css";
 import { NavLink} from "react-router-dom";
 import { useContext } from "react";
 
-import { AuthContext } from "../context/AuthContext";
+//import { AuthContext } from "../context/AuthContext";
 import { useOperationsContext } from "../context/OperationsContext";
+import Context from "../context/Context";
 
 
 export default function Navbar() {
 
     const {FormatCoin, total} = useOperationsContext ()
-    const { usuario } = useContext(AuthContext);
+    // const { usuario } = useContext(AuthContext);
+    const { usuario} = useContext(Context);
+    
+
+
 
     return (
         <nav>
