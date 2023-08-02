@@ -13,7 +13,10 @@ export default function UserContextProvider({ children }) {
       const response = await fetch("/platos.json");
       if (!response.ok) throw new Error("NO SE PUEDE DESPLEGAR LA INFORMACIÓN");
       const data = await response.json();
+
+      
       const favoritoData = data.map((plato) => ({ ...plato, favorito: false }));
+
       setPlatos(data);
       setfavorito(favoritoData);
     } catch (error) {
@@ -21,25 +24,19 @@ export default function UserContextProvider({ children }) {
     }
   };
 
-  const fetchfavoritoData = async () => {
-    try {
-      const response = await fetch("/platosjson");
-      if (!response.ok) throw new Error("Error al acceder a la API");
-      const data = await response.json();
-      setfavorito(data.img);
-    } catch (error) {
-      setError(error);
-    }
+  const resetFavoritos = () => {
+    const favoritoData = platos.map((plato) => ({ ...plato, favorito: false }));
+    setfavorito(favoritoData);
   };
+
 
   useEffect(() => {
     fetchPlatosData();
-    fetchfavoritoData();
   }, []);
 
 
     return (
-        <UserContext.Provider value={{usuario,setUsuario, platos, setPlatos, error, setError,favorito,setfavorito }}>
+        <UserContext.Provider value={{usuario,setUsuario, platos, setPlatos, error, setError,favorito,setfavorito, resetFavoritos }}>
             {children}
         </UserContext.Provider>
     )

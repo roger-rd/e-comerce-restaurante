@@ -32,13 +32,7 @@ export default function Menu() {
     setfavorito([...favorito]);
   };
 
-  const handleAddToCart = (id) => {
-    if (!usuario) {
-      alert("Debes iniciar sesión para agregar al carrito.");
-      return;
-    }
 
-     }
   
 
   return (
@@ -74,7 +68,6 @@ export default function Menu() {
                     </button>
                     <ButtonAdd
                       idPlato={item.id}
-                      onClick={() => handleAddToCart(item.id)}
                     />
                     <button
                       className="btn btn-success"
