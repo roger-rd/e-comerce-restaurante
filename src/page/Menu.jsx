@@ -1,10 +1,11 @@
 import "../assets/css/home.css";
-import React from "react";
+import React ,{ useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonAdd from "../components/ButtonAdd";
 import { useUserContext } from "../context/UserContext";
-import { useContext } from "react";
 import Context from "../context/Context";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Menu() {
   const { platos, favorito, setfavorito } = useUserContext();
@@ -14,7 +15,15 @@ export default function Menu() {
 
   const handleToggleFavorite = (id) => {
     if (!usuario) {
-      alert("Debes iniciar sesión para agregar a favoritos.");
+      toast.error("Debes iniciar sesión para agregar a favoritos.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       return;
     }
 
