@@ -3,13 +3,17 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonAdd from "../components/ButtonAdd";
 import { useUserContext } from "../context/UserContext";
+import { useContext } from "react";
+import Context from "../context/Context";
 
 export default function Menu() {
-  const { platos, favorito, setfavorito, user, cart, setCart } = useUserContext();
+  const { platos, favorito, setfavorito } = useUserContext();
+  const { usuario} = useContext(Context);
   const navigate = useNavigate();
+  
 
   const handleToggleFavorite = (id) => {
-    if (!user) {
+    if (!usuario) {
       alert("Debes iniciar sesión para agregar a favoritos.");
       return;
     }
@@ -20,28 +24,13 @@ export default function Menu() {
   };
 
   const handleAddToCart = (id) => {
-    if (!user) {
+    if (!usuario) {
       alert("Debes iniciar sesión para agregar al carrito.");
       return;
     }
 
-    const selectedPlato = platos.find((item) => item.id === id);
-
-    // Verificar si el plato ya está en el carrito
-    const existingPlato = cart.find((item) => item.id === id);
-
-    if (existingPlato) {
-      // Si el plato ya está en el carrito, incrementar la cantidad
-      const updatedCart = cart.map((item) =>
-        item.id === id ? { ...item, cantidad: item.cantidad + 1 } : item
-      );
-      setCart(updatedCart);
-    } else {
-      // Si el plato no está en el carrito, agregarlo con cantidad 1
-      const newPlato = { ...selectedPlato, cantidad: 1 };
-      setCart([...cart, newPlato]);
-    }
-  };
+     }
+  
 
   return (
     <div>

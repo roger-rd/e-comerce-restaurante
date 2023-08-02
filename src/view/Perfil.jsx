@@ -13,11 +13,11 @@ export default function Perfil() {
 
 
   const getUsuarioData = async () => {
-    const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
-    const endpoint = "/perfil";
-
-    // const urlServer = "http://localhost:3001/api/v1/user/";
+    // const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
     // const endpoint = "/perfil";
+
+    const urlServer = "http://localhost:3001/api/v1/user/";
+    const endpoint = "/perfil";
 
 
     const token = localStorage.getItem("token");

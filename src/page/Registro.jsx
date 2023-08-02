@@ -49,11 +49,11 @@ const validarCamposLlenos = ()=>{
 
 
       try {
-        const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
-        const endpoint = "/register"
-
-        // const urlServer = "http://localhost:3001/api/v1/user";
+        // const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
         // const endpoint = "/register"
+
+        const urlServer = "http://localhost:3001/api/v1/user";
+        const endpoint = "/register"
 
         await axios.post(urlServer + endpoint, usuario)
         toast.success("Usuario registrado con éxito 😀", { autoClose: 2000 });
