@@ -130,10 +130,9 @@ export default function Perfil() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    const newValue = name === 'telefono' ? String(value) : value;
     setNuevosDatos((prevData) => ({
       ...prevData,
-      [name]: newValue,
+      [name]: value,
     }));
   };
 
@@ -153,10 +152,12 @@ export default function Perfil() {
       const { data } = await axios.get(urlServer + endpoint, {
         headers: { Authorization: "Bearer " + token },
       });
+
+
       console.log("Datos del usuario:", data);
       setUsuarioGlobal(data);
       setUsuarioLocal(data);
-      setNuevosDatos(data); // Inicializamos los nuevos datos con los datos actuales del usuario
+      setNuevosDatos(data); 
 
     } catch (error) {
       console.log("Error al realizar la petición:", error);
@@ -175,15 +176,18 @@ export default function Perfil() {
   }, []);
 
   const handleUpdateProfile = async () => {
+    
+  
+    
     try {
       const urlServer = "http://localhost:3001/api/v1/user";
-      const endpoint = `/update/:${usuario.id_usuario}`;
+      const endpoint = `/update/${id_usuario}`;
       const token = localStorage.getItem("token");
 
       console.log("Realizando petición a:", urlServer + endpoint);
 
       const { rol, ...restoDatos } = nuevosDatos;
-      
+
       const { data } = await axios.put(
         urlServer + endpoint,
         restoDatos, 
@@ -197,8 +201,19 @@ export default function Perfil() {
       setUsuarioGlobal(data.result); // Actualizamos el usuario en el contexto
       setEditMode(false); // Cambiamos el estado para salir del modo de edición
     } catch (error) {
-      console.log("Error al actualizar el perfil:", error);
-      toast.error("Hubo un error al actualizar el perfil");
+      if (error.response) {
+        // Si hay una respuesta del servidor, se ha recibido una respuesta de error válida
+        console.log("Error en la respuesta del servidor:", error.response.data);
+        toast.error("Hubo un error al actualizar el perfil: " + error.response.data.error);
+      } else if (error.request) {
+        // Si no hay respuesta del servidor, puede ser un error de conexión o de red
+        console.log("Error de conexión o de red:", error.request);
+        toast.error("Hubo un error de conexión o de red al actualizar el perfil");
+      } else {
+        // Si no hay request, es un error en la lógica de la solicitud
+        console.log("Error en la lógica de la solicitud:", error.message);
+        toast.error("Hubo un error en la lógica de la solicitud al actualizar el perfil");
+      }
     }
   };
 
@@ -253,7 +268,7 @@ export default function Perfil() {
                          </h5>
                          <h5 className="text-muted">Telefono: 
                           <input
-                           type="text"
+                           type="number"
                            name="telefono"
                            value={nuevosDatos.telefono}
                            onChange={handleChange}
@@ -291,7 +306,7 @@ export default function Perfil() {
                            placeholder="Nueva direccion"
                          />
                          <input
-                           type="text"
+                           type="number"
                            name="numero_de_direccion"
                            value={nuevosDatos.numero_de_direccion}
                            onChange={handleChange}
