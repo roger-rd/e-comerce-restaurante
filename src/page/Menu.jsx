@@ -36,7 +36,7 @@ export default function Menu() {
   
 
   return (
-    <div>
+    <div className="container">
       <div className="menu">
         {platos.map((item) => (
           <div className="row-cols-1 row-cols-md-1 " key={item.id}>

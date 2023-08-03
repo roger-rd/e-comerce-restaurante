@@ -33,7 +33,7 @@ export default function RegistroForm() {
       if (!correo || !password) 
       return alert("correo y password obligatorias");
       
-      setLoading(true); // Activar el estado de loading
+      setLoading(true);
 
       const { data: token } = await axios.post(urlServer + endpoint, usuario);
       toast.success("Usuario identificado con éxito 😀", { autoClose: 3000 });
@@ -54,7 +54,7 @@ export default function RegistroForm() {
       <h1>Iniciar Sesión</h1>
       <hr />
       <div className="form-group mt-1">
-        <label>correo address</label>
+        <label>Correo Electrónico</label>
         <input
           value={usuario.correo}
           onChange={handleSetUsuario}
@@ -65,7 +65,7 @@ export default function RegistroForm() {
         />
       </div>
       <div className="form-group mt-1">
-        <label>Password</label>
+        <label>Contraseña</label>
         <input
           value={usuario.password}
           onChange={handleSetUsuario}

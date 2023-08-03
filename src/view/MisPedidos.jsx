@@ -7,14 +7,13 @@ export default function MisPedidos() {
   useEffect(() => {
     const usuarioLocalStorage = localStorage.getItem("usuario");
     if (usuarioLocalStorage) {
-      // Si hay un usuario registrado en el localStorage, actualiza el contexto
       setUsuario(JSON.parse(usuarioLocalStorage));
     }
   }, []);
 
   return (
     <div>
-      hola es la pagina de mis pedidos
+      <h1>pagina de mis pedidos se encuenta en mantenimiento</h1>
     </div>
   );
 }

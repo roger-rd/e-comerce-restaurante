@@ -1,6 +1,8 @@
+import "../assets/css/galeria.css";
+
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import "../assets/css/galeria.css";
+
 import { UserContext } from "../context/UserContext";
 
 import ButtonAdd from "../components/ButtonAdd"; 
@@ -18,7 +20,7 @@ export default function Galeria() {
 
   return (
     <div className=" container">
-      <h1 className="text-center"> Agrega tus comidas favoritas aquí 🍔🍰🧁</h1>
+      <h1 className="text-center"> Agrega tus Platos favoritos aquí 🍔🍰🧁</h1>
       <div className="galeria">
       {favoriteMenu.map((item) => (
         <div className="row-cols-1 row-cols-md-1" key={item.id}>
@@ -37,13 +39,16 @@ export default function Galeria() {
               <div className="card-footer">
                 <h5 className="text-muted">$ {item.price}</h5>
                 <h5 className="text-muted">👨🏼‍💼 {item.cantidad}</h5>
-                <div className="buttonHome">
-                  <Link
-                    className="btn btn-warning"
-                    to={`/DetalleMenu/${item.id}`}
-                  >
-                    Ver más 👀
-                  </Link>
+                <div className="buttonMenuFavorito">
+                  <button
+                      className="btn btn-warning btnVerMas"
+                      onClick={() => {
+                        navigate(`/DetalleMenu/${item.id}`);
+                      }}
+                    >
+                      Ver más 👀
+                    </button>
+                  
                   <ButtonAdd idPlato={item.id} />
                   <button
                     className="btn btn-success"

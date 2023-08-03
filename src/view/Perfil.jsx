@@ -1,8 +1,10 @@
+import "../assets/css/perfil.css"; 
 import { useContext, useState, useEffect } from "react";
 import Context from "../context/Context";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 export default function Perfil() {
   const { setUsuario: setUsuarioGlobal, usuario } = useContext(Context);
@@ -126,113 +128,142 @@ export default function Perfil() {
                       {editMode ? (
                         <>
                           <form>
-                            <h5 className="text-muted">Nombre y apellido:
-                              <input
+                            <h5 className="text-muted">Nombre y Apellido:
+                              <input 
+                                className="input-perfil"
                                 type="text"
                                 name="nombre"
                                 value={nuevosDatos.nombre}
                                 onChange={handleChange}
                                 placeholder="Nuevo nombre"
+                                maxlength="50"
                               />
-                              <input
+                              <input 
+                                className="input-perfil"
                                 type="text"
-                                name="apellido"
+                                name="Apellido"
                                 value={nuevosDatos.apellido}
                                 onChange={handleChange}
                                 placeholder="Nuevo apellido"
+                                maxlength="50"
                               />
                             </h5>
                             <h5 className="text-muted">Rut:
                               <input
+                                className="input-perfil"
                                 type="text"
                                 name="rut"
                                 value={nuevosDatos.rut}
                                 onChange={handleChange}
                                 placeholder="Nuevo rut"
+                                maxlength="10"
                               />
                             </h5>
                             <h5 className="text-muted">Telefono:
                               <input
+                                className="input-perfil"
                                 type="number"
                                 name="telefono"
                                 value={nuevosDatos.telefono}
                                 onChange={handleChange}
                                 placeholder="Nuevo teléfono"
+                                maxlength="10"
+
                               />
                             </h5>
-                            <h5 className="text-muted">correo:
+                            <h5 className="text-muted">Correo:
                               <input
+                                className="input-perfil"
                                 type="text"
                                 name="correo"
                                 value={nuevosDatos.correo}
                                 onChange={handleChange}
                                 placeholder="Nuevo correo"
+                                maxlength="50"
                               />
                             </h5>
                             <h5 className="text-muted">Contraseña:
                               <input
+                                className="input-perfil"
                                 type="password"
                                 name="password"
                                 value={nuevosDatos.password}
                                 onChange={handleChange}
                                 placeholder="Nuevo contraseña"
+                                maxlength="100"
+
                               />
                             </h5>
 
                             <hr />
 
-                            <div className="card-footer">
-                              <h5 className="text-muted">Direccion:
+                            <div className="card-footer-perfil">
+                            <h2>Dirección de entrega</h2>
+                              <div>
+                                <h5 className="text-muted">Direccion:
+                                <hr />
                                 <input
+                                  className="input-perfil"
                                   type="text"
                                   name="direccion"
                                   value={nuevosDatos.direccion}
                                   onChange={handleChange}
                                   placeholder="Nueva direccion"
+                                maxlength="100"
+
                                 />
                                 <input
+                                  className="input-perfil"
                                   type="number"
                                   name="numero_de_direccion"
                                   value={nuevosDatos.numero_de_direccion}
                                   onChange={handleChange}
-                                  placeholder="Nuevo numero_de_direccion"
+                                  placeholder="Nuevo numero de direccion"
                                 />
                               </h5>
+                                </div>
                             </div>
                           </form>
                         </>
                       ) : (
                         <>
-                          <h5 className="text-muted">Nombre y Apellido: <span>{usuarioLocal.nombre} {usuarioLocal.apellido}</span></h5>
-                          <h5 className="text-muted">Rut: {usuarioLocal.rut}</h5>
-                          <h5 className="text-muted">Correo: {usuarioLocal.correo}</h5>
-                          <h5 className="text-muted">Teléfono: {usuarioLocal.telefono}</h5>
+                          <h4 className="text-muted">Nombre y Apellido: <span><h5>{usuarioLocal.nombre} {usuarioLocal.apellido}</h5></span> </h4>
+                         
+                          <h4 className="text-muted">Rut: <span><h6>{usuarioLocal.rut}</h6></span> </h4>
+            
+                          <h4 className="text-muted">Correo: <span><h6>{usuarioLocal.correo}</h6></span> </h4>
+                          
+                          <h4 className="text-muted">Teléfono: <span><h5>{usuarioLocal.telefono}</h5></span></h4>
                           <hr />
                           <div className="card-footer">
                             <h2>Dirección de entrega</h2>
-                            <h5 className="text-muted">Dirección: {usuarioLocal.direccion} {usuarioLocal.numero_de_direccion}</h5>
+                            
+                              <h5 className="text-muted">Dirección: {usuarioLocal.direccion} {usuarioLocal.numero_de_direccion}</h5>
+                            
+                            
                           </div>
                         </>
                       )}
                     </div>
-                    <div className="buttonHome">
-                      {editMode ? (
-                        <button
-                          className="btn btn-success"
-                          onClick={handleUpdateProfile}
-                        >
-                          Guardar Perfil
-                        </button>
+                    <div className="d-flex justify-content-center gap-3">
+                        {editMode ? (
+                        <>
+                          <button className="btn btn-success boton-perfil" onClick={handleUpdateProfile}>
+                            Guardar
+                          </button>
+                          <Link to="/menu" className="btn btn-warning boton-perfil">Volver</Link>
+                        </>
                       ) : (
                         <button
-                          className="btn btn-info"
+                          className="btn btn-info" boton-perfil
                           onClick={() => setEditMode(true)}
                         >
                           Editar Usuario
                         </button>
+                        
                       )}
                       <button
-                        className="btn btn-danger"
+                        className="btn btn-danger boton-perfil"
                         onClick={() => {
                           // Agrega la lógica para la acción de "Eliminar usuario"
                           console.log("Eliminar usuario");

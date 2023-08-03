@@ -60,12 +60,7 @@ function App() {
       </main>
       <Footer />
       <ToastContainer/>
-      
-
-
-    
       </Context.Provider>
-
     </>
   );
 }

@@ -28,7 +28,6 @@ nav {
 
 footer{
   position: fixed ;
-  /* margin-top: 20%; */
   background: #00080a;
   margin-bottom: 2px;
   height: 10%;
@@ -38,39 +37,32 @@ footer{
 
 
 body {
-  margin-bottom: 100px; /* Ajusta el valor según el alto del footer */
+  margin-bottom: 100px; 
 }
 
 @media (max-width: 767px) {
   .navHom {
     font-size: 14px;
-    /* Otros estilos específicos para pantallas pequeñas */
+
   }
 }
 
-/* Estilos para pantallas medianas */
 @media (min-width: 768px)  {
   .navHom {
     font-size: 16px;
-    /* Otros estilos específicos para pantallas medianas */
   }
 }
 
-/* Estilos para pantallas grandes */
+
 @media (min-width: 992px) {
   .navHom {
     font-size: 18px;
-    /* Otros estilos específicos para pantallas grandes */
+    
   }
 }
 @media (min-width: 993px) {
   .navHom {
     font-size: 100%;
-    /* Otros estilos específicos para pantallas grandes */
+    
   }
 }
-
-
-
-
-

@@ -24,36 +24,55 @@ img{
   width: 100%;
 }
 
-
-
-
-.foto {
-  cursor: pointer;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 10px 10px 0px 10px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  height: 200px;
-  width: 200px;
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: left;
-  text-shadow: 0px 0px 15px black;
-
-} */
-
 .galeria .foto:hover {
   box-shadow: 0px 0px 2px 1px black;
 }
 
- .foto svg {
-  align-self: flex-end;
+.buttonMenuFavorito {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
 
-
+ .btnVerMas{
+  margin: 0;
  }
 
+ @media (min-width: 576px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  margin: 10px;
+  margin-top: 30px;
+  .cartas {
+    height: 100px;
+  }
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .galeria {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .galeria {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1500px) {
+  .galeria {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
 
 

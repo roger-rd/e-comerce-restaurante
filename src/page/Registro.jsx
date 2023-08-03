@@ -82,7 +82,7 @@ const validarCamposLlenos = ()=>{
       <h1>Registrar nuevo usuario</h1>
       <hr />
       <div className="form-group mt-1 ">
-        <label>Nombre</label>
+        <label>Nombres</label>
         <input
           value={usuario.nombre}
           onChange={handleSetUsuario}
@@ -119,6 +119,7 @@ const validarCamposLlenos = ()=>{
           minLength="3"
           maxLength="10"
         />
+        <label >(ingrese rut sin puntos y con guión)</label>
       </div>
       <div className="form-group mt-1 ">
         <label>Telefono</label>
@@ -141,7 +142,7 @@ const validarCamposLlenos = ()=>{
           type="text"
           name="direccion"
           className="form-control"
-          placeholder="Direccion"
+          placeholder="Dirección"
           minLength="3"
           maxLength="100"
         />
@@ -154,20 +155,20 @@ const validarCamposLlenos = ()=>{
           type="number"
           name="numero_de_direccion"
           className="form-control"
-          placeholder="Numero de direccion"
+          placeholder="Numero de dirección"
           min="1"
           max="9999"
         />
       </div>
       <div className="form-group mt-1 ">
-        <label>Email address</label>
+        <label>Correo electrónico </label>
         <input
           value={usuario.correo}
           onChange={handleSetUsuario}
           type="email"
           name="correo"
           className="form-control"
-          placeholder="Enter email"
+          placeholder="Ingrese Correo"
           minLength="3"
           maxLength="50"
         />
@@ -184,6 +185,7 @@ const validarCamposLlenos = ()=>{
           minLength="3"
           maxLength="100"
         />
+        <label>(Deben ser más  de 6 digitos)</label>
       </div>
       <div className="form-group mt-1 ">
         <label>Rol</label>
