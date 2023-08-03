@@ -28,21 +28,23 @@ export default function Navbar() {
             <div className="d-flex">
                 <div className=" navHom car">
                 <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/menu" >Menu</NavLink>
+                <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/car" >🛒{FormatCoin(total)}</NavLink>
                 </div>
 
                 {!usuario && (
                 <div className="  navHom car">
                     <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/registro" >Registrarse</NavLink>
                     <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/login" >Iniciar Sesión</NavLink>
+                    
                 </div>
                 )}
 
                 {/* rutas protegidas */}
                 {usuario ? (
                 <div className="d-flex ">
-                    <div className="navHom car">
+                    {/* <div className="navHom car">
                     <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/car" >🛒{FormatCoin(total)}</NavLink>
-                    </div>
+                    </div> */}
                     <div className="navHom car">
                     <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/perfil" >Perfil</NavLink>
                     </div>

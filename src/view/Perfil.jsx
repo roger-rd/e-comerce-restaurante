@@ -68,6 +68,7 @@ export default function Perfil() {
       const urlServer = "http://localhost:3001/api/v1/user";
       const endpoint = `/update/${usuario.id_usuario}`;
       const token = localStorage.getItem("token");
+      
 
       console.log("Realizando petición a:", urlServer + endpoint);
 

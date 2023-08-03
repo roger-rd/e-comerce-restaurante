@@ -8,6 +8,7 @@ import axios from "axios";
 export default function RegistroForm() {
   const { setUsuario } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const [usuario, setUsuarioLocal] = useState({
     correo: "", 
@@ -31,11 +32,14 @@ export default function RegistroForm() {
     try {
       if (!correo || !password) 
       return alert("correo y password obligatorias");
+      
+      setLoading(true); // Activar el estado de loading
 
       const { data: token } = await axios.post(urlServer + endpoint, usuario);
       toast.success("Usuario identificado con éxito 😀", { autoClose: 3000 });
       localStorage.setItem("token",token); // Guardar el token en el localStorage
       setUsuario();
+      setLoading(false); // Desactivar el estado de loading
       navigate("/perfil");
     } catch ({ response: { data: message } }) {
       alert( "Email o Password incorrecto 🙁, intente nuevamente  ");
@@ -73,7 +77,7 @@ export default function RegistroForm() {
       </div>
 
       <button onClick={iniciarSesion} className="btn btn-light mt-3">
-        Iniciar Sesión
+        {loading ? "Cargando..." : "Iniciar Sesión"}
       </button>
     </div>
     
