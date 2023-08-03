@@ -32,7 +32,8 @@
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-            });}else {
+            });}
+            if(usuario) {
             toast.success(
                 `¡Felicidades! Has pagado tus pedidos. Por ser el primero, te sale gratis.`,
                 {
