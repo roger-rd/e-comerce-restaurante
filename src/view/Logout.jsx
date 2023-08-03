@@ -19,18 +19,14 @@ export default function Logout() {
     navigate("/");
   
   };
-
   const handleLogout = () => {
     resetFavoritos();
-  }
-
-  
+  }  
   const handleLogoutButtonClick = () => {
     logout();
     handleLogout();
   };
   
-
   return (
     <div className="col-10 col-sm-6 col-md-3 m-auto mt-5">
       <h1>Cerrar Sesión</h1>
