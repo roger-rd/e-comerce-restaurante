@@ -66,30 +66,19 @@
     "favorito": false
   },
   {
-    "desc": "Es un plato sabroso y aromático que combina trozos de pollo tierno con una salsa de curry llena de especias y sabores exóticos..",
+    "desc": " Una opción deliciosa y saludable para aquellos que prefieren evitar la carne en su alimentación. Este tipo de sándwich se compone de diferentes ingredientes vegetarianos que se colocan entre dos rebanadas de pan",
     "id": "P007",
-    "img": "https://www.gourmet.cl/wp-content/uploads/2016/09/Pollo-al-Curry-ajustada-web-570x458.jpg",
-    "ingredients": ["Pechugas de pollo", "Curry","Almendra sin piel", "Salsa Blanca"],
-    "name": "POLLO AL CURRY",
-    "categoria": "plato de fondo",
-    "cantidad":"2 Personas",
-    "price": 7250,
-    "favorito": false
-  },
-    {
-    "desc": "Una deliciosa variante del clásico quiche que se caracteriza por ser apto para vegetarianos y utilizar una masa hecha a base de quinoa en lugar de la tradicional masa de harina de trigo.",
-    "id": "P008",
-    "img": "https://www.gourmet.cl/wp-content/uploads/2021/08/Quiche_Adaptada_Gourmet.jpg",
-    "ingredients": ["Aceite de oliva","Quinoa tricolor","Pimienta Negra Molida","Pimentón rojo","Zapallo italiano", "Huevos","Crema de leche"],
-    "name": "QUICHE VEGETARIANO CON MASA DE QUINOA",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2016/09/sandwich-vegetariano.jpg",
+    "ingredients": ["Leche","Huevos", "Sal", "Harina", "Aceite"],
+    "name": "SANDWICH VEGETARIANO",
     "categoria": "plato de fondo",
     "cantidad":" 2 Personas",
     "price": 7250,
     "favorito": false
   },
-    {
+  {
     "desc": " Es un plato clásico de la cocina española y consiste en una mezcla de papas (patatas) y huevos. Se trata de una especie de torta o pastel hecho a base de rodajas finas de papas cocidas en aceite y luego mezcladas con huevos batidos",
-    "id": "P010",
+    "id": "P008",
     "img": "https://www.gourmet.cl/wp-content/uploads/2011/04/tortilla_papas.jpg",
     "ingredients": ["Papas grandes peladas","Pimentón rojo","Huevos","Merquén","Pimienta Negra"],
     "name": "TORTILLA DE PAPAS",
@@ -99,19 +88,8 @@
     "favorito": false
   },
   {
-    "desc": "Una deliciosa preparación de carne que se cocina en el horno para lograr una cocción uniforme y un sabor jugoso.",
-    "id": "P011",
-    "img": "https://www.gourmet.cl/wp-content/uploads/2018/04/1200x627-1-570x458.jpg",
-    "ingredients": ["Ají de Color", "Punta de Ganso", "Papas con Cáscara", "Pimienta Negra Molida", "Vino Blanco"],
-    "name": "CARNE ASADA AL HORNO",
-    "categoria": "plato de fondo",
-    "cantidad":" 2 Personas",
-    "price": 7250,
-    "favorito": false
-  },
-  {
     "desc": "Una deliciosa preparación en la que se utiliza quinoa para crear una capa crujiente alrededor del pescado. Es una opción saludable y sabrosa que combina la textura crujiente de la quinoa con la jugosidad y el sabor del pescado.",
-    "id": "P012",
+    "id": "P009",
     "img": "https://www.gourmet.cl/wp-content/uploads/2015/04/Pescado-con-Costra-de-Quinoa.jpg",
     "ingredients": ["Filetes de pescado (salmón, congrio)","Mostaza","Quínoa blanca","Quínoa roja","Queso parmesano"],
     "name": "PESCADO CON COSTRA DE QUÍNOA",
@@ -121,13 +99,35 @@
     "favorito": false
   },
   {
-    "desc": " Una opción deliciosa y saludable para aquellos que prefieren evitar la carne en su alimentación. Este tipo de sándwich se compone de diferentes ingredientes vegetarianos que se colocan entre dos rebanadas de pan",
-    "id": "P013",
-    "img": "https://www.gourmet.cl/wp-content/uploads/2016/09/sandwich-vegetariano.jpg",
-    "ingredients": ["Leche","Huevos", "Sal", "Harina", "Aceite"],
-    "name": "SANDWICH VEGETARIANO",
+    "desc": "Una deliciosa preparación de carne que se cocina en el horno para lograr una cocción uniforme y un sabor jugoso.",
+    "id": "P010",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2018/04/1200x627-1-570x458.jpg",
+    "ingredients": ["Ají de Color", "Punta de Ganso", "Papas con Cáscara", "Pimienta Negra Molida", "Vino Blanco"],
+    "name": "CARNE ASADA AL HORNO",
     "categoria": "plato de fondo",
     "cantidad":" 2 Personas",
+    "price": 7250,
+    "favorito": false
+  },
+  {
+    "desc": "Una deliciosa variante del clásico quiche que se caracteriza por ser apto para vegetarianos y utilizar una masa hecha a base de quinoa en lugar de la tradicional masa de harina de trigo.",
+    "id": "P011",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2021/08/Quiche_Adaptada_Gourmet.jpg",
+    "ingredients": ["Aceite de oliva","Quinoa tricolor","Pimienta Negra Molida","Pimentón rojo","Zapallo italiano", "Huevos","Crema de leche"],
+    "name": "QUICHE VEGETARIANO CON MASA DE QUINOA",
+    "categoria": "plato de fondo",
+    "cantidad":" 2 Personas",
+    "price": 7250,
+    "favorito": false
+  },
+  {
+    "desc": "Es un plato sabroso y aromático que combina trozos de pollo tierno con una salsa de curry llena de especias y sabores exóticos..",
+    "id": "P012",
+    "img": "https://www.gourmet.cl/wp-content/uploads/2016/09/Pollo-al-Curry-ajustada-web-570x458.jpg",
+    "ingredients": ["Pechugas de pollo", "Curry","Almendra sin piel", "Salsa Blanca"],
+    "name": "POLLO AL CURRY",
+    "categoria": "plato de fondo",
+    "cantidad":"2 Personas",
     "price": 7250,
     "favorito": false
   }
