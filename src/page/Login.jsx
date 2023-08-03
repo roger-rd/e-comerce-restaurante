@@ -22,11 +22,11 @@ export default function RegistroForm() {
   };
 
   const iniciarSesion = async () => {
-    // const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
-    // const endpoint = "/login";
-
-    const urlServer = "http://localhost:3001/api/v1/user/";
+    const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
     const endpoint = "/login";
+
+    // const urlServer = "http://localhost:3001/api/v1/user/";
+    // const endpoint = "/login";
 
     const { correo, password } = usuario;
     try {
@@ -39,7 +39,7 @@ export default function RegistroForm() {
       toast.success("Usuario identificado con éxito 😀", { autoClose: 3000 });
       localStorage.setItem("token",token); // Guardar el token en el localStorage
       setUsuario();
-      setLoading(false); // Desactivar el estado de loading
+      setLoading(false);
       navigate("/perfil");
     } catch ({ response: { data: message } }) {
       alert( "Email o Password incorrecto 🙁, intente nuevamente  ");

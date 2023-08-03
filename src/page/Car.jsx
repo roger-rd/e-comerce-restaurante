@@ -22,15 +22,16 @@
             draggable: true,
             progress: undefined,
         });
-        } if (carro.length === 0) {
+        } 
+        if (carro.length === 0) {
             toast.error("Debes agregar al menos un plato al carrito.", {
-              position: "top-center",
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
             });}else {
             toast.success(
                 `¡Felicidades! Has pagado tus pedidos. Por ser el primero, te sale gratis.`,

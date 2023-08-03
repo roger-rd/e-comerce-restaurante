@@ -11,7 +11,6 @@ export default function Perfil() {
   const [loading, setLoading] = useState(true);
   const [editMode, setEditMode] = useState(false);
 
-  // Estado local para almacenar los nuevos valores del usuario
   const [nuevosDatos, setNuevosDatos] = useState(usuarioLocal);
 
 
@@ -24,11 +23,11 @@ export default function Perfil() {
   };
 
   const getUsuarioData = async () => {
-    // const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
-    // const endpoint = "/perfil";
-
-    const urlServer = "http://localhost:3001/api/v1/user/";
+    const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
     const endpoint = "/perfil";
+
+    // const urlServer = "http://localhost:3001/api/v1/user/";
+    // const endpoint = "/perfil";
 
 
     const token = localStorage.getItem("token");
@@ -65,8 +64,12 @@ export default function Perfil() {
   const handleUpdateProfile = async () => {
 
     try {
-      const urlServer = "http://localhost:3001/api/v1/user";
+      const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
       const endpoint = `/update/${usuario.id_usuario}`;
+
+      // const urlServer = "http://localhost:3001/api/v1/user";
+      // const endpoint = `/update/${usuario.id_usuario}`;
+
       const token = localStorage.getItem("token");
       
 
