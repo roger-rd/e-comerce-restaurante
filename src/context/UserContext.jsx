@@ -5,7 +5,7 @@ export const UserContext = createContext();
 export default function UserContextProvider({ children }) {
   const [usuario, setUsuario] = useState(null);
   const [platos, setPlatos] = useState([]);
-  const [favorito, setfavorito] = useState([]);
+  const [favorito, setFavorito] = useState([]);
   const [error, setError] = useState(null);
 
   const fetchPlatosData = async () => {
@@ -18,7 +18,7 @@ export default function UserContextProvider({ children }) {
       const favoritoData = data.map((plato) => ({ ...plato, favorito: false }));
 
       setPlatos(data);
-      setfavorito(favoritoData);
+      setFavorito(favoritoData);
     } catch (error) {
       setError(error);
     }
@@ -26,7 +26,7 @@ export default function UserContextProvider({ children }) {
 
   const resetFavoritos = () => {
     const favoritoData = platos.map((plato) => ({ ...plato, favorito: false }));
-    setfavorito(favoritoData);
+    setFavorito(favoritoData);
   };
 
 
@@ -36,7 +36,7 @@ export default function UserContextProvider({ children }) {
 
 
     return (
-        <UserContext.Provider value={{usuario,setUsuario, platos, setPlatos, error, setError,favorito,setfavorito, resetFavoritos }}>
+        <UserContext.Provider value={{usuario,setUsuario, platos, setPlatos, error, setError,favorito,setFavorito, resetFavoritos }}>
             {children}
         </UserContext.Provider>
     )

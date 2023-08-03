@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Menu() {
-  const { platos, favorito, setfavorito } = useUserContext();
+  const { platos, favorito, setFavorito } = useUserContext();
   const { usuario} = useContext(Context);
   const navigate = useNavigate();
   
@@ -29,7 +29,7 @@ export default function Menu() {
 
     const index = favorito.findIndex((ele) => ele.id === id);
     favorito[index].favorito = !favorito[index].favorito;
-    setfavorito([...favorito]);
+    setFavorito([...favorito]);
   };
 
 
