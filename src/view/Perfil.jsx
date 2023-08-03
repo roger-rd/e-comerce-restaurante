@@ -139,7 +139,7 @@ export default function Perfil() {
                                 maxlength="50"
                               />
                               <input 
-                                className="input-perfil"
+                                className="input-perfil "
                                 type="text"
                                 name="Apellido"
                                 value={nuevosDatos.apellido}
@@ -148,7 +148,7 @@ export default function Perfil() {
                                 maxlength="50"
                               />
                             </h5>
-                            <h5 className="text-muted">Rut:
+                            <h5 className="text-muted ">Rut:
                               <input
                                 className="input-perfil"
                                 type="text"
@@ -158,6 +158,7 @@ export default function Perfil() {
                                 placeholder="Nuevo rut"
                                 maxlength="10"
                               />
+                              <h5 className="fs-6 fw-lighter" >(ingrese rut sin puntos y con guión)</h5>
                             </h5>
                             <h5 className="text-muted">Telefono:
                               <input
@@ -191,8 +192,8 @@ export default function Perfil() {
                                 onChange={handleChange}
                                 placeholder="Nuevo contraseña"
                                 maxlength="100"
-
                               />
+                              <h5 className="fs-6 fw-lighter">(Deben se más de 6 digitos)</h5>
                             </h5>
 
                             <hr />

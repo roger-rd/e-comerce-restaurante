@@ -119,7 +119,7 @@ const validarCamposLlenos = ()=>{
           minLength="3"
           maxLength="10"
         />
-        <label >(ingrese rut sin puntos y con guión)</label>
+        <h5 className="fs-6 fw-lighter" >(ingrese rut sin puntos y con guión)</h5>
       </div>
       <div className="form-group mt-1 ">
         <label>Telefono</label>
@@ -185,7 +185,7 @@ const validarCamposLlenos = ()=>{
           minLength="3"
           maxLength="100"
         />
-        <label>(Deben ser más  de 6 digitos)</label>
+        <h5 className="fs-6 fw-lighter">(Deben se más de 6 digitos)</h5>
       </div>
       <div className="form-group mt-1 ">
         <label>Rol</label>

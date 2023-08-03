@@ -1,15 +1,14 @@
 import "../assets/css/galeria.css";
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-
 import ButtonAdd from "../components/ButtonAdd"; 
+
 
 export default function Galeria() {
   const { favorito, setFavorito } = useContext(UserContext);
-
+  const navigate = useNavigate();
   function handleClick(id) {
     const index = favorito.findIndex((ele) => ele.id === id);
     favorito[index].favorito = !favorito[index].favorito;
