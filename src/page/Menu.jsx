@@ -1,4 +1,4 @@
-import "../assets/css/home.css";
+import "../assets/css/menu.css";
 import React ,{ useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonAdd from "../components/ButtonAdd";
@@ -37,11 +37,11 @@ export default function Menu() {
 
   return (
     <div>
-      <div className="home">
+      <div className="menu">
         {platos.map((item) => (
           <div className="row-cols-1 row-cols-md-1 " key={item.id}>
             <div className="col">
-              <div className="card h-100">
+              <div className="card h-100 cartas">
                 <img src={item.img} className="card-img-top" alt={item.name} />
                 <div className="card-body">
                   <h5 className="card-title">{item.name}</h5>
@@ -57,7 +57,7 @@ export default function Menu() {
                   <h5 className="text-muted">$ {item.price}</h5>
                   <h5 className="text-muted">👨🏼‍💼 {item.cantidad}</h5>
 
-                  <div className="buttonHome">
+                  <div className="buttonMenu">
                     <button
                       className="btn btn-warning"
                       onClick={() => {
@@ -70,11 +70,11 @@ export default function Menu() {
                       idPlato={item.id}
                     />
                     <button
-                      className="btn btn-success"
+                      className="btn btn-success "
                       onClick={() => handleToggleFavorite(item.id)}
                     >
                       {favorito.find((photo) => photo.id === item.id)?.favorito
-                        ? "Quitar de favoritos ❤️"
+                        ? "Quitar de favorito ❤️"
                         : "Agregar a favoritos 🤍"}
                     </button>
                   </div>
