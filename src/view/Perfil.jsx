@@ -118,14 +118,26 @@ export default function Perfil() {
 
   return (
     <>
-      <div>
-        <h1>
-          <span className="badge bg-secondary">Bienvenid@</span>
-        </h1>
+      <div className="container">
+      <div className="card m-0 p-2" >
+      <div className="row g-1 align-items-center">
+        <div className="col-md-2 col-4 m-0 p-0">
+          <img src="https://www.falabella.com/a/fa/myaccount/static/images/defaultProfilePicture-rebranded.svg" className="img-fluid rounded-start" alt="..."/>
+        </div>
+        <div className="col-md-8">
+          <div className="card-body">
+          <span>
+          <span className="">HOLA </span>
+        </span>
+        <h1>{usuarioLocal.nombre} {usuarioLocal.apellido}</h1>
+          </div>
+        </div>
       </div>
+    </div>
+
       <div className="container text-center">
         <div className="row">
-          <div>
+          <div className="col">
             <div className="perfil">
               <div className="row-cols-1 row-cols-md-1 ">
                 <div className="col">
@@ -292,9 +304,6 @@ export default function Perfil() {
                                   placeholder="Nuevo numero de direccion"
                                 />  
                               </div>      
-                           
-                              
-                       
                           </form>
                         </>
                       ) : (
@@ -308,16 +317,13 @@ export default function Perfil() {
                           <h4 className="text-muted">Teléfono: <span><h5>{usuarioLocal.telefono}</h5></span></h4>
                           <hr />
                           <div className="card-footer">
-                            <h2>Dirección de entrega</h2>
-                            
+                            <h2>Dirección de entrega</h2>                            
                               <h5 className="text-muted">Dirección: {usuarioLocal.direccion} {usuarioLocal.numero_de_direccion}</h5>
-                            
-                            
                           </div>
                         </>
                       )}
                     </div>
-                    <div className="d-flex justify-content-center gap-3">
+                    <div className="d-flex justify-content-center gap-3 card-footer">
                         {editMode ? (
                         <>
                           <button className="btn btn-success boton-perfil" onClick={handleUpdateProfile}>
@@ -350,6 +356,7 @@ export default function Perfil() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
