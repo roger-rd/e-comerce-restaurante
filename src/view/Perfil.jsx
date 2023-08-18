@@ -23,13 +23,20 @@ export default function Perfil() {
       [name]: value,
     }));
   };
+  // const handleCheckboxChange = () => {
+  //   setNuevosDatos((prevData) => ({
+  //     ...prevData,
+  //     cambiarPassword: !prevData.cambiarPassword,
+  //     password: "",
+  //   }));
+  // };
 
   const getUsuarioData = async () => {
-    const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
-    const endpoint = "/perfil";
-
-    // const urlServer = "http://localhost:3001/api/v1/user/";
+    // const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
     // const endpoint = "/perfil";
+
+    const urlServer = "http://localhost:3001/api/v1/user/";
+    const endpoint = "/perfil";
 
 
     const token = localStorage.getItem("token");
@@ -66,11 +73,11 @@ export default function Perfil() {
   const handleUpdateProfile = async () => {
 
     try {
-      const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
-      const endpoint = `/update/${usuario.id_usuario}`;
-
-      // const urlServer = "http://localhost:3001/api/v1/user";
+      // const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
       // const endpoint = `/update/${usuario.id_usuario}`;
+
+      const urlServer = "http://localhost:3001/api/v1/user";
+      const endpoint = `/update/${usuario.id_usuario}`;
 
       const token = localStorage.getItem("token");
       
@@ -128,102 +135,166 @@ export default function Perfil() {
                       {editMode ? (
                         <>
                           <form>
-                            <h5 className="text-muted">Nombre y Apellido:
-                              <input 
-                                className="input-perfil"
-                                type="text"
+                          <div className="mb-1">
+                              <label 
+                              htmlFor="nombre" 
+                              className="form-label text-muted m-1">Nombre:</label>
+                              <input
+                               type="text"
+                                className="form-control text-center" 
+                                id="nombre" 
                                 name="nombre"
                                 value={nuevosDatos.nombre}
                                 onChange={handleChange}
                                 placeholder="Nuevo nombre"
-                                maxlength="50"
-                              />
-                              <input 
-                                className="input-perfil "
+                                maxLength="50"
+                                />
+                               
+                            </div>
+                            <div className="mb-1">
+                              <label 
+                              htmlFor="apellido" 
+                              className="form-label text-muted m-1">Apellido:</label>
+                                <input 
                                 type="text"
-                                name="Apellido"
+                                className="form-control text-center"
+                                id="apellido"
+                                name="apellido"
                                 value={nuevosDatos.apellido}
                                 onChange={handleChange}
                                 placeholder="Nuevo apellido"
-                                maxlength="50"
+                                maxLength="50"
                               />
-                            </h5>
-                            <h5 className="text-muted ">Rut:
-                              <input
-                                className="input-perfil"
-                                type="text"
-                                name="rut"
-                                value={nuevosDatos.rut}
-                                onChange={handleChange}
-                                placeholder="Nuevo rut"
-                                maxlength="10"
-                              />
-                              <h5 className="fs-6 fw-lighter" >(ingrese rut sin puntos y con guión)</h5>
-                            </h5>
-                            <h5 className="text-muted">Telefono:
-                              <input
-                                className="input-perfil"
-                                type="number"
-                                name="telefono"
-                                value={nuevosDatos.telefono}
-                                onChange={handleChange}
-                                placeholder="Nuevo teléfono"
-                                maxlength="10"
+                            </div>
+                            <div className="mb-1">
+                              <label htmlFor="rutEditado" className="form-label text-muted m-1">Rut</label>
+                              <input 
+                              type="text" 
+                              id="rutEditado"
+                              className="form-control text-center"
+                              name="rut"
+                              value={nuevosDatos.rut}
+                              onChange={handleChange}
+                              placeholder="example: 12345678-9"
+                              maxLength="50"
+                              />              
+                              <div id="rutMessenger" className="form-text">(ingrese rut sin puntos y con guión)</div>
+                            </div>
 
-                              />
-                            </h5>
-                            <h5 className="text-muted">Correo:
-                              <input
-                                className="input-perfil"
-                                type="text"
+                            <div className="mb-1">
+                              <label htmlFor="telefonoEditado" className="form-label text-muted m-1">Telefono:</label>
+                              <input 
+                              type="text" 
+                              id="telefonoEditado"
+                              className="form-control text-center"
+                              name="telefono"
+                              value={nuevosDatos.telefono}
+                              onChange={handleChange}
+                              placeholder="Nuevo teléfono"
+                                maxLength="10"
+                              />                  
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="correoEditado" className="form-label text-muted m-1">Correo</label>
+                                <input 
+                                type="email" 
+                                id="correoEditado"
+                                className="form-control text-center"
                                 name="correo"
                                 value={nuevosDatos.correo}
                                 onChange={handleChange}
                                 placeholder="Nuevo correo"
-                                maxlength="50"
-                              />
-                            </h5>
-                            <h5 className="text-muted">Contraseña:
-                              <input
-                                className="input-perfil"
-                                type="password"
+                                aria-describedby="emailHelp"
+                                maxLength="50"
+                                />                  
+                                <div id="emailHelp" className="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="correoEditado" className="form-label text-muted m-1">Contraseña:</label>
+                                <input 
+                                type="password" 
+                                id="passwordEditado"
+                                className="form-control text-center"
                                 name="password"
                                 value={nuevosDatos.password}
                                 onChange={handleChange}
-                                placeholder="Nuevo contraseña"
-                                maxlength="100"
+                                placeholder="Nuevo correo"
+                                aria-describedby="passwordlHelp"
+                                maxLength="50"
+                                />                  
+                               <div id="passworMessenger" className="form-text ">(Deben se más de 6 digitos)</div>
+                            </div>
+
+                      
+                            {/* <div className="mb-3">
+                              
+                                <input 
+                                className="form-check-input" 
+                                type="checkbox"
+                                 id="cambiarPassword"
+                                 checked={nuevosDatos.cambiarPassword}
+                                 onChange={handleCheckboxChange}
+                                 />
+                                <label 
+                                className="form-check-label" 
+                                htmlFor="cambiarPassword">
+                                  si deseas cambiar la Contraseña activa el check
+                                </label>
+                                <label 
+                                htmlFor="passwordEditado"
+                                 className="form-label text-muted m-1"
+                                 >Contraseña</label>
+                              {nuevosDatos.cambiarPassword ?(
+                                <input 
+                                type="password" 
+                                id="passwordEditado"
+                                className="form-control text-center"
+                                name="password"
+                                value={nuevosDatos.password}
+                                onChange={handleChange}
+                                placeholder="new password"
+                                maxLength="100"
+                                />
+                              ):
+                              <input
+                                type="password"
+                                id="passwordEditado"
+                                className="form-control text-center"
+                                name="password"
+                                value=""
+                                disabled
                               />
-                              <h5 className="fs-6 fw-lighter">(Deben se más de 6 digitos)</h5>
-                            </h5>
+                              }                                                      
+                               <div id="passworMessenger" className="form-text ">(Deben se más de 6 digitos)</div>
+                            </div> */}
+
 
                             <hr />
-
-                            <div className="card-footer-perfil">
+                            <div className="mb-1 card-footer-perfil">
                             <h2>Dirección de entrega</h2>
-                              <div>
-                                <h5 className="text-muted">Direccion:
-                                <hr />
+                              <label htmlFor="telefonoEditado" className="form-label text-muted m-1">Direccion:</label>
+                              <input 
+                              type="text" 
+                              id="DireccionEditado"
+                              className="form-control text-center"
+                              name="direccion"
+                              value={nuevosDatos.direccion}
+                              onChange={handleChange}
+                              placeholder="Nueva direccion"
+                                maxLength="100"
+                              />   
                                 <input
-                                  className="input-perfil"
-                                  type="text"
-                                  name="direccion"
-                                  value={nuevosDatos.direccion}
-                                  onChange={handleChange}
-                                  placeholder="Nueva direccion"
-                                maxlength="100"
-
-                                />
-                                <input
-                                  className="input-perfil"
+                                  className="form-control text-center"
                                   type="number"
                                   name="numero_de_direccion"
                                   value={nuevosDatos.numero_de_direccion}
                                   onChange={handleChange}
                                   placeholder="Nuevo numero de direccion"
-                                />
-                              </h5>
-                                </div>
-                            </div>
+                                />  
+                              </div>      
+                           
+                              
+                       
                           </form>
                         </>
                       ) : (
