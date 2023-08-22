@@ -30,6 +30,12 @@
 
     
 } 
+.imgTitulo{
+  height: 4rem;
+  width: 4rem;
+  /* margin: 15%;
+  align-items:center; */
+}
 .boton-perfil{
     width: 20%;
     height: auto;
